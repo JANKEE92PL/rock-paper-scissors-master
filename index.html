@@ -14,12 +14,12 @@
 </head>
 <body>
 
-  <main>
-    <div id="board" class="flex justify-between border-2 rounded-xl p-4">
+  <main class="wrapper min-w-[75%]">
+    <div id="board" class="flex justify-between border-2 rounded-xl border-gray-300/50 p-5 w-1/2 m-auto">
       <div class="logo"><img src="/images/logo.svg" alt="logo"></div>
-      <div class="score-box">
-        <h2>Score</h2>
-        <div id="score-points">0</div>
+      <div class="score-box w-1/5 bg-gray-100 rounded-xl text-center">
+        <h2 class="text-3xl uppercase text-blue-800 font-semibold">Score</h2>
+        <div id="score-points" class="text-5xl text-sky-900 font-bold">10</div>
       </div>
     </div>
     <div id="game"></div>
