@@ -8,9 +8,8 @@
   
   <title>Jankee92PL | Rock, Paper, Scissors</title>
 
-  <link rel="stylesheet" href="styles.css">
-
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
@@ -18,7 +17,10 @@
   <main>
     <div id="board" class="flex justify-between border-2 rounded-xl p-4">
       <div class="logo"><img src="/images/logo.svg" alt="logo"></div>
-      <div class="score" >Score</div>
+      <div class="score-box">
+        <h2>Score</h2>
+        <div id="score-points">0</div>
+      </div>
     </div>
     <div id="game"></div>
     <div id="rules">Rules</div>
