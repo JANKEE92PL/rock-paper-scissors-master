@@ -27,27 +27,36 @@ body .wrapper #game {
   position: relative;
 }
 body .wrapper #game #paper {
-  width: 250px;
-  height: 250px;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   box-shadow: inset 1px 20px 5px -5px rgba(179, 179, 179, 0.7490196078);
   background-color: #f3f4f6;
   position: absolute;
   top: 0;
   left: 20%;
+  transform: translate(-50%, -50%);
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
   z-index: 10;
 }
 body .wrapper #game #paper::after {
   content: "";
   border: 25px solid #5572F2;
   box-shadow: 0 12px 2px 0 #2945C3;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+body .wrapper #game #paper img {
+  width: 100px;
+  margin: auto;
 }
 body .wrapper #game #scissor {
   width: 5rem;
