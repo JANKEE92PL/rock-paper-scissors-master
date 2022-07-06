@@ -3,12 +3,14 @@
 $bg-dark: #192444
 $family: "Barlow Semi Condensed', sans-serif"
 $bg-light: #f3f4f6
-$scissors: #ec9e0e
+$scissors: #EBA921
+$scissors-dark: #C96A16
 $scissors-gradient: #eca922
 $paper: #5572F2
 $paper-dark: #2945C3
 $paper-gradient: #133afc
-$rock: #dc2e4e
+$rock: #DF405E
+$rock-dark: #991431
 $rock-gradient: #dd405d
 
 $lizard: hsl(261, 73%, 60%)
@@ -34,8 +36,8 @@ body
         justify-content: space-evenly
 
         #game
-            height: 50vh
-            margin: 10rem 5rem
+            height: 40vh
+            margin: 13rem 5rem
             background-image: url("images/bg-triangle.svg")
             background-position: center
             background-size: contain
@@ -44,14 +46,14 @@ body
 
             #paper
                 cursor: pointer
-                width: 200px
-                height: 200px
+                width: 180px
+                height: 180px
                 border-radius: 50%
                 box-shadow: inset 1px 20px 5px -5px #b3b3b3bf
                 background-color: $bg-light
                 position: absolute
                 top: 0
-                left: 20%
+                left: 30%
                 transform: translate(-50%,-50%)
                 object-fit: contain
                 display: flex
@@ -60,8 +62,8 @@ body
                     content: ''
                     border: 25px solid $paper
                     box-shadow: 0 12px 2px 0 $paper-dark
-                    width: 250px
-                    height: 250px
+                    width: 230px
+                    height: 230px
                     border-radius: 50%
                     position: absolute
                     top: 50%
@@ -71,25 +73,61 @@ body
                     width: 100px
                     margin: auto
             #scissor
-                width: 5rem
-                height: 5rem
-                background-image: url("/images/icon-scissors.svg")
-                background-position: center
-                background-size: contain
-                background-repeat: no-repeat
+                cursor: pointer
+                width: 180px
+                height: 180px
+                border-radius: 50%
+                box-shadow: inset 1px 20px 5px -5px #b3b3b3bf
+                background-color: $bg-light
                 position: absolute
                 top: 0
-                right: 20%
-            #stone
-                width: 5rem
-                height: 5rem
-                background-image: url("/images/icon-rock.svg")
-                background-position: center
-                background-size: contain
-                background-repeat: no-repeat
+                right: 10%
+                transform: translate(-50%,-50%)
+                object-fit: contain
+                display: flex
+                z-index: 10
+                &::after
+                    content: ''
+                    border: 25px solid $scissors
+                    box-shadow: 0 12px 2px 0 $scissors-dark
+                    width: 230px
+                    height: 230px
+                    border-radius: 50%
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                img
+                    width: 100px
+                    margin: auto
+            #rock
+                cursor: pointer
+                width: 180px
+                height: 180px
+                border-radius: 50%
+                box-shadow: inset 1px 20px 5px -5px #b3b3b3bf
+                background-color: $bg-light
                 position: absolute
-                bottom: 0
-                left: 45%
+                bottom: 10%
+                right: 30%
+                transform: translate(-55%,45%)
+                object-fit: contain
+                display: flex
+                z-index: 10
+                &::after
+                    content: ''
+                    border: 25px solid $rock
+                    box-shadow: 0 12px 2px 0 $rock-dark
+                    width: 230px
+                    height: 230px
+                    border-radius: 50%
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+                img
+                    width: 100px
+                    margin: auto
 
     .attribution
         font-size: 12px
