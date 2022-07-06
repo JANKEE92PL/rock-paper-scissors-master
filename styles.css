@@ -17,7 +17,7 @@ body .wrapper {
   flex-direction: column;
   justify-content: space-evenly;
 }
-body .wrapper #game {
+body .wrapper #game-start {
   height: 40vh;
   margin: 13rem 5rem;
   background-image: url("images/bg-triangle.svg");
@@ -26,7 +26,7 @@ body .wrapper #game {
   background-repeat: no-repeat;
   position: relative;
 }
-body .wrapper #game #paper {
+body .wrapper #game-start #paper {
   cursor: pointer;
   width: 180px;
   height: 180px;
@@ -42,7 +42,7 @@ body .wrapper #game #paper {
   display: flex;
   z-index: 10;
 }
-body .wrapper #game #paper::after {
+body .wrapper #game-start #paper::after {
   content: "";
   border: 25px solid #5572F2;
   box-shadow: 0 12px 2px 0 #2945C3;
@@ -54,11 +54,11 @@ body .wrapper #game #paper::after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-body .wrapper #game #paper img {
+body .wrapper #game-start #paper img {
   width: 100px;
   margin: auto;
 }
-body .wrapper #game #scissor {
+body .wrapper #game-start #scissor {
   cursor: pointer;
   width: 180px;
   height: 180px;
@@ -74,7 +74,7 @@ body .wrapper #game #scissor {
   display: flex;
   z-index: 10;
 }
-body .wrapper #game #scissor::after {
+body .wrapper #game-start #scissor::after {
   content: "";
   border: 25px solid #EBA921;
   box-shadow: 0 12px 2px 0 #C96A16;
@@ -86,11 +86,11 @@ body .wrapper #game #scissor::after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-body .wrapper #game #scissor img {
+body .wrapper #game-start #scissor img {
   width: 100px;
   margin: auto;
 }
-body .wrapper #game #rock {
+body .wrapper #game-start #rock {
   cursor: pointer;
   width: 180px;
   height: 180px;
@@ -106,7 +106,7 @@ body .wrapper #game #rock {
   display: flex;
   z-index: 10;
 }
-body .wrapper #game #rock::after {
+body .wrapper #game-start #rock::after {
   content: "";
   border: 25px solid #DF405E;
   box-shadow: 0 12px 2px 0 #991431;
@@ -118,7 +118,7 @@ body .wrapper #game #rock::after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-body .wrapper #game #rock img {
+body .wrapper #game-start #rock img {
   width: 100px;
   margin: auto;
 }
