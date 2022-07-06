@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Jankee92PL | Rock, Paper, Scissors</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
 
-  <main class="wrapper min-w-[75%]">
-    <div id="board" class="flex justify-between border-2 rounded-xl border-gray-300/50 p-5 w-1/2 m-auto">
+  <main class="wrapper">
+    <div id="board" class="flex justify-between border-2 rounded-xl border-gray-300/50 p-5 w-1/2">
       <div class="logo"><img src="/images/logo.svg" alt="logo"></div>
-      <div class="score-box w-1/5 bg-gray-100 rounded-xl text-center">
-        <h2 class="text-3xl uppercase text-blue-800 font-semibold">Score</h2>
+      <div class="score-box w-1/4 bg-gray-100 rounded-xl text-center">
+        <h2 class="text-xl md:text-3xl uppercase text-blue-800 font-semibold">Score</h2>
         <div id="score-points" class="text-5xl text-sky-900 font-bold">10</div>
       </div>
     </div>
-    <div id="game"></div>
-    <div id="rules">Rules</div>
+    <div id="game" class="w-1/2">
+      <div id="paper"></div>
+      <div id="scissor"></div>
+      <div id="stone"></div>
+    </div>
+    <div id="rules"
+      class="border-2 rounded-xl border-gray-300/50 p-2 w-1/6 text-center pointer cursor-pointer absolute bottom-10 right-10">
+      Rules</div>
 
   </main>
 
-  
-  
+
+
 
   You Picked
   The House Picked
@@ -38,10 +47,10 @@
 
   Play Again
 
-  
+
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Jankee92PL</a>.
   </div>
 </body>
+
 </html>

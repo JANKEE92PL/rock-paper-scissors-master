@@ -1,19 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap')
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap'
+
+$bg-dark: #192444
+$family: "Barlow Semi Condensed', sans-serif"
+$bg-light: #f3f4f6
+$scissors: #ec9e0e
+$scissors-gradient: #eca922
+$paper: #5572F2
+$paper-dark: #2945C3
+$paper-gradient: #133afc
+$rock: #dc2e4e
+$rock-gradient: #dd405d
+
+$lizard: hsl(261, 73%, 60%)
+$lizard-gradient: hsl(261, 72%, 63%)
+$cyan: hsl(189, 59%, 53%)
+$cyan-gradient: hsl(189, 58%, 57%)
 
 *
     box-sizing: border-box
     margin: 0
     padding: 0
 
-$bg-dark: rgba(25, 36, 68, 1)
 body
-    font-family: "Barlow Semi Condensed', sans-serif"
+    font-family: $family
     background-color: $bg-dark
     color: white
 
-    .wrapper 
-        margin: 4rem 0
-        max-width: auto
+    .wrapper
+        margin: 4rem auto
+        display: flex
+        align-items: center
+        flex-direction: column
+        justify-content: space-evenly
+
+        #game
+            height: 50vh
+            margin: 10rem 5rem
+            background-image: url("images/bg-triangle.svg")
+            background-position: center
+            background-size: contain
+            background-repeat: no-repeat
+            position: relative
+
+            #paper
+                width: 250px
+                height: 250px
+                border-radius: 50%
+                box-shadow: inset 1px 20px 5px -5px #b3b3b3bf
+                background-color: $bg-light
+                position: absolute
+                top: 0
+                left: 20%
+                z-index: 10
+
+                &::after
+                    content: ''
+                    border: 25px solid $paper
+                    box-shadow: 0 12px 2px 0 $paper-dark
+                    width: 300px
+                    height: 300px
+                    border-radius: 50%
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%,-50%)
+            #scissor
+                width: 5rem
+                height: 5rem
+                background-image: url("/images/icon-scissors.svg")
+                background-position: center
+                background-size: contain
+                background-repeat: no-repeat
+                position: absolute
+                top: 0
+                right: 20%
+            #stone
+                width: 5rem
+                height: 5rem
+                background-image: url("/images/icon-rock.svg")
+                background-position: center
+                background-size: contain
+                background-repeat: no-repeat
+                position: absolute
+                bottom: 0
+                left: 45%
 
     .attribution
         font-size: 12px
