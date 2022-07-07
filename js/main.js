@@ -11,6 +11,8 @@ const computer = document.getElementById("computer");
 const openBtn = document.getElementById("open");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("modal");
+const auraPlayer = document.querySelector(".player");
+const auraComputer = document.querySelector(".computer");
 
 let score = 0;
 
@@ -55,6 +57,7 @@ function winner() {
     // i won
     myScore(1);
     win.innerText = "win";
+    // auraPlayer.display = "block";
   } else {
     // i lose
     win.innerText = "lose";
@@ -100,11 +103,11 @@ openBtn.addEventListener("click", function () {
   modal.style.display = "flex";
 });
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == body) {
-      modal.style.display = "none";
-    }
+window.onclick = function (event) {
+  if (event.target == body) {
+    modal.style.display = "none";
   }
+}
 
 closeBtn.addEventListener("click", function () {
   modal.style.display = "none";
