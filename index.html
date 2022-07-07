@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  
+
   <title>Jankee92PL | Rock, Paper, Scissors</title>
 
 </head>
-<body>
-  <div class="container1" id="new">
+
+<body id="body">
+  <div class="container" id="new">
     <header>
       <h1>
-        <span>Rock</span>
+        <img src="images/logo.svg" alt="logo">
+        <!-- <span>Rock</span>
         <span>Paper</span>
-        <span>Scissors</span>
+        <span>Scissors</span> -->
       </h1>
       <div class="score-card">
         <h4>score</h4>
@@ -26,54 +29,55 @@
     </header>
 
     <main id="main">
-      <button class="circular paper pick" choice ="paper">
+      <button class="circular paper pick" choice="paper">
         <span class="wrapper">
-          <img src="./images/icon-paper.svg" alt="paper-icon" >
+          <img src="./images/icon-paper.svg" alt="paper-icon">
         </span>
       </button>
-      <button class="circular scissors pick" choice ="scissors"> 
+      <button class="circular scissors pick" choice="scissors">
         <span class="wrapper">
-          <img src="./images/icon-scissors.svg"     alt="scissors-icon">
+          <img src="./images/icon-scissors.svg" alt="scissors-icon">
         </span>
-       </button>
-       <button class="circular rock pick" choice = "rock"> 
-         <span class="wrapper">
-           <img src="./images/icon-rock.svg" alt="rock-icon" >
-         </span>
-       </button>
+      </button>
+      <button class="circular rock pick" choice="rock">
+        <span class="wrapper">
+          <img src="./images/icon-rock.svg" alt="rock-icon">
+        </span>
+      </button>
     </main>
 
 
     <div class="rules-modal" id="modal">
-        <h2 class="mb-5 pb-2">rules</h2>
-        <img src="./images/image-rules.svg" alt="rules">
-        <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
+      <h2 class="mb-5 pb-2">rules</h2>
+      <img src="./images/image-rules.svg" alt="rules">
+      <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
     </div>
-       <button class="rules btn btn-transparent" id="open">Rules</button>
- </div>
+    <button class="rules btn btn-transparent" id="open">Rules</button>
+  </div>
 
- <div class="select" id="select">
-  <div>
-    <h2>You picked</h2>
-    <button class="circular paper" id="user">
-      <span class="wrapper">
-        <img src="./images/icon-paper.svg" alt="paper-icon">
-      </span>
-    </button>
+  <div class="select" id="select">
+    <div>
+      <h2>You picked</h2>
+      <button class="circular" id="user">
+        <span class="wrapper">
+          <img src="./images/icon-paper.svg" alt="paper-icon">
+        </span>
+      </button>
+    </div>
+    <div class="down">
+      <p class="result">You <span id="win">win</span></p>
+      <button class="button" id="play">play again</button>
+    </div>
+    <div>
+      <h2>The house picked</h2>
+      <button class="circular" id="computer">
+        <span class="wrapper">
+          <img src="./images/icon-rock.svg" alt="rock-icon">
+        </span>
+      </button>
+    </div>
   </div>
-  <div class="down">
-    <p class="result">You <span id="win">win</span></p>
-    <button class="button" id="play">play again</button>
-  </div>
-  <div>
-    <h2>The house picked</h2>
-    <button class="circular rock" id="computer"> 
-      <span class="wrapper">
-        <img src="./images/icon-rock.svg" alt="rock-icon">
-      </span>
-    </button>
-  </div>
-</div>
   <script src="js/main.js"></script>
 </body>
+
 </html>

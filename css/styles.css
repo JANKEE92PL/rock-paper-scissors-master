@@ -1,5 +1,5 @@
-@import 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap';
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import "https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap";
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 * {
   box-sizing: border-box;
@@ -7,56 +7,250 @@
   padding: 0;
 }
 
-body{
-    background: radial-gradient(circle at 50% 10%,hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    min-height: 100vh;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+body {
+  background: radial-gradient(
+    circle at 50% 10%,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
-.container1{
-    width: 700px;
-    max-width: 100%;
-    margin: 0 auto;
+.container {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
 }
-header{
-    display: flex;
-    border: 3px solid  hsl(217, 16%, 45%);
-    justify-content: space-between;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 40px 0;
-    align-items: center;
+header {
+  display: flex;
+  border: 3px solid hsl(217, 16%, 45%);
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px 0;
+  align-items: center;
 }
-h1{
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    text-transform: uppercase;
-    line-height: .8;
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: inherit;
+h1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 0.8;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: inherit;
 }
-.score-card h4{
-    color: hsl(229, 64%, 46%);
-    margin: 0;
-    letter-spacing: 5px;
-    font-family: inherit;
+.score-card h4 {
+  color: hsl(229, 64%, 46%);
+  margin: 0;
+  letter-spacing: 5px;
+  font-family: inherit;
 }
-.score-card{
-    background-color: white;
-    padding: 20px 40px;
-    border-radius: 10px;
-    text-align: center;
+.score-card {
+  background-color: white;
+  padding: 4px 40px;
+  border-radius: 10px;
+  text-align: center;
 }
-.score-card p{
-    color: hsl(229, 25%, 31%);
-    margin: 0;
-    font-size: 3.5rem;
-    font-weight: 700;
-    font-family: inherit;
+.score-card p {
+  color: hsl(229, 25%, 31%);
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: inherit;
 }
-.rules{
-    border: 2px solid white;
+.rules {
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 10px;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  position: absolute;
+  right: 10%;
+  bottom: 0;
+}
+.circular {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  outline: none !important;
+  border: none;
+  cursor: pointer;
+  margin: 0px 30px;
+  transition: all 200ms;
+}
+.circular .wrapper {
+  width: 120px;
+  height: 120px;
+  background-color: rgb(252, 252, 252);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: inset 0 5px rgba(0, 0, 0, 0.15);
+}
+.paper {
+  background-image: linear-gradient(
+    to right,
+    hsl(230, 89%, 62%),
+    hsl(230, 89%, 65%)
+  );
+}
+.rock {
+  background: linear-gradient(
+    to bottom,
+    hsl(349, 71%, 52%),
+    hsl(349, 70%, 56%)
+  );
+}
+.scissors {
+  background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+main {
+  height: 350px;
+  width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  max-width: 100%;
+}
+main::after {
+  background-image: url(../images/bg-triangle.svg);
+  content: "";
+  height: 70%;
+  width: 85%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 23%;
+  left: 15%;
+  z-index: -1;
+}
+.button {
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: white;
+  font-family: inherit;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  color: hsl(229, 25%, 31%);
+  font-size: 20px;
+}
+
+.select {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: none;
+  color: white;
+  flex-wrap: wrap;
+}
+/* Add Aura Efekt to Winners Choice */
+.select div:first-child {
+  z-index: -1;
+  background: radial-gradient(
+    circle,
+    rgba(30, 42, 74, 1) 0%,
+    rgb(116, 116, 116) 50%,
+    rgb(255, 255, 255) 100%
+  );
+  clip-path: circle(50% at 50% 50%);
+}
+.select div:last-child {
+  z-index: -1;
+  background: radial-gradient(
+    circle,
+    rgba(30, 42, 74, 1) 0%,
+    rgb(238, 115, 115) 50%,
+    rgb(230, 65, 65) 100%
+  );
+  clip-path: circle(50% at 50% 50%);
+}
+.result {
+  font-size: 3rem;
+  margin: 0 0 50px;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+.select .circular {
+  margin: 80px 100px;
+  transform: scale(1.5);
+}
+.pick:active {
+  transform: scale(0.8);
+}
+h2 {
+  line-height: 2px;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+.rules-modal {
+  background-color: rgba(241, 241, 241, 0.96);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 80vw;
+  height: 80vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 50;
+  border-radius: 24px;
+}
+.rules-modal button {
+  border: none;
+  outline: none;
+  margin-top: 43px;
+  background-color: transparent;
+  cursor: pointer;
+  transform: scale(1.5);
+  font-family: inherit;
+}
+#close {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  transition: transform 100ms;
+}
+#close:active {
+  transform: scale(75%);
+}
+@media (max-width: 800px) {
+  .down {
+    order: 1;
+  }
+  .select .circular {
+    margin: 50px 20px;
+    transform: scale(1);
+  }
+  .select {
+    width: 500px;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .rules {
     border-radius: 10px;
     background-color: transparent;
     font-family: inherit;
@@ -70,170 +264,8 @@ h1{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    display: flex;
     position: absolute;
-    left: 610px;
-    bottom: 0;
-    
+    left: 180px;
+    bottom: -100px;
+  }
 }
-.circular{
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    outline: none !important;
-    border: none;
-    cursor: pointer;
-    margin: 0px 30px;
-}
-.circular .wrapper{
-    width: 120px;
-    height: 120px;
-    background-color: rgb(252, 252, 252);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-shadow: inset 0 5px  rgba(0, 0, 0, 0.15);
-}
-.paper
-{
-    background-image: linear-gradient(
-        to right,
-        hsl(230, 89%, 62%), 
-        hsl(230, 89%, 65%)
-    );
-
-}
-.rock{
-    background: linear-gradient( to bottom,hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-
-}
-.scissors{
-   background: linear-gradient(to bottom,hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-}
-main{
-    height: 350px;
-    width: 450px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
-    max-width: 100%;
-}
-main::after{
-    background-image: url(../images/bg-triangle.svg);
-    content: "";
-    height: 70%;
-    width: 85%;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 23%;
-    left: 15%;
-    z-index: -1;
-}
-.button{
-    border: 2px solid white;
-    border-radius: 10px;
-    background-color: white;
-    font-family: inherit;
-    padding: 10px 25px;
-    text-transform: uppercase;
-    cursor: pointer;
-    letter-spacing: 2px;
-    color: hsl(229, 25%, 31%);
-    font-size: 20px;
-}
-.select{
-    justify-content:center;
-    align-items: center;
-    text-align: center;
-    width: 1000px;
-    max-width: 100%;
-    margin: 0 auto;
-    display: none;
-    color: white;
-    flex-wrap: wrap;
-}
-.result{
-    font-size: 3rem;
-    margin: 0 0 50px;
-    line-height: 0.8;
-    text-transform: uppercase;
-    
-}
-.select .circular{
-    margin: 80px 100px;
-    transform: scale(1.5);
-}
-.pick:active{
-    transform: scale(.8);
-}
-h2{
-    line-height: 2px;
-    text-transform: uppercase;
-    font-family: inherit;
-}
-.rules-modal
-{
-    background-color: #f0f0f0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 50;
-}
-.rules-modal button{
-    border: none;
-    outline: none;
-    margin-top: 43px;
-    background-color: transparent;
-    cursor: pointer;
-    transform: scale(1.5);
-    font-family: inherit;
-}
-@media (max-width:800px){
-    .down{
-        order: 1;
-    }
-    .select .circular{
-        margin: 50px 20px;
-        transform: scale(1);
-    }
-    .select{
-        width: 500px;
-    }
-    h2{
-        font-size: 1rem;
-    }
-    .rules{
-        border: 2px solid white;
-        border-radius: 10px;
-        background-color: transparent;
-        font-family: inherit;
-        padding: 10px 25px;
-        text-transform: uppercase;
-        cursor: pointer;
-        letter-spacing: 2px;
-        color: white;
-        font-size: 20px;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        position: absolute;
-        left: 180px;
-        bottom: -100px;
-        
-    }
-
-}
-
-
