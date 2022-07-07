@@ -164,25 +164,42 @@ main::after {
   flex-wrap: wrap;
 }
 /* Add Aura Efekt to Winners Choice */
-.select div:first-child {
-  z-index: -1;
-  background: radial-gradient(
-    circle,
-    rgba(30, 42, 74, 1) 0%,
-    rgb(116, 116, 116) 50%,
-    rgb(255, 255, 255) 100%
-  );
-  clip-path: circle(50% at 50% 50%);
+
+.aura{
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+.select .aura:before {
+  display: none;
+  content: '';
+  background-color: rgba(168, 168, 168, 0.05);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%,-47%);
+  border: rgba(133, 133, 133, 0.05) 50px solid;
+  border-radius: 50%;
+  z-index: -10;
+
+}
+.select .aura::after {
+  display: none;
+  content: '';
+  background-color: rgba(133, 133, 133, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%,-47%);
+  border-radius: 50%;
+  z-index: -11;
+
 }
 .select div:last-child {
   z-index: -1;
-  background: radial-gradient(
-    circle,
-    rgba(30, 42, 74, 1) 0%,
-    rgb(238, 115, 115) 50%,
-    rgb(230, 65, 65) 100%
-  );
-  clip-path: circle(50% at 50% 50%);
 }
 .result {
   font-size: 3rem;
