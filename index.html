@@ -47,10 +47,15 @@
     </main>
 
 
-    <div class="rules-modal" id="modal">
-      <h2 class="mb-5 pb-2">rules</h2>
-      <img src="./images/image-rules.svg" alt="rules">
-      <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
+    <div class="modal-rules" id="modal">
+      <div class="modal-rules-content">
+        <h2 class="modal-rules-title">rules</h2>
+        <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
+      </div>
+      <div class="modal-rules-image">
+        <img src="./images/image-rules.svg" alt="rules">
+
+      </div>
     </div>
     <button class="rules btn btn-transparent" id="open">Rules</button>
   </div>
@@ -67,7 +72,7 @@
     </div>
     <div class="down">
       <p class="result">You <span id="win">win</span></p>
-      <button class="button" id="play">play again</button>
+      <button class="button btn btn-primary" id="play">play again</button>
     </div>
     <div class="position-relative">
       <h2>The house picked</h2>
