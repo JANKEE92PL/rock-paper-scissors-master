@@ -38,13 +38,12 @@ h1 {
   line-height: 0.8;
   font-size: 3rem;
   font-weight: 700;
-  font-family: inherit;
 }
 .score-card h4 {
   color: hsl(229, 64%, 46%);
-  margin: 0;
-  letter-spacing: 5px;
-  font-family: inherit;
+  margin: 6px 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
 }
 .score-card {
   background-color: white;
@@ -78,6 +77,22 @@ h1 {
   position: absolute;
   right: 10%;
   bottom: 0;
+}
+.settings{
+  background-color: transparent;
+  padding: 10px 25px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  border: none;
+}
+.settings img {
+  width: 30px;
 }
 .circular {
   height: 150px;
@@ -292,6 +307,7 @@ h2 {
     left: 180px;
     bottom: -100px;
   }
+
   .modal-rules {
     width: 50vw;
     height: 60vh;
