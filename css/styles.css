@@ -166,7 +166,8 @@ main::after {
 }
 /* Add Aura Efekt to Winners Choice */
 
-.select .aura-player::before {
+.select .aura-player::before,
+.aura-computer::before {
   content: "";
   background-color: rgba(168, 168, 168, 0.05);
   position: absolute;
@@ -179,7 +180,8 @@ main::after {
   border-radius: 50%;
   z-index: -1000;
 }
-.select .aura-player::after {
+.select .aura-player::after,
+.aura-computer::after {
   content: "";
   background-color: rgba(133, 133, 133, 0.1);
   position: absolute;

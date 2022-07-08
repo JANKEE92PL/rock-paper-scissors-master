@@ -11,6 +11,8 @@ const computer = document.getElementById("computer");
 const openBtn = document.getElementById("open");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("modal");
+const auraPlayer = document.querySelector(".aura-player");
+const auraComputer = document.querySelector(".aura-computer");
 
 let score = 0;
 
@@ -47,6 +49,8 @@ function winner() {
   if (myChoice === computerChoice) {
     //draw
     win.innerText = "draw";
+    auraPlayer.style.display = "none";
+    auraComputer.style.display = "none";
   } else if (
     (myChoice === "rock" && computerChoice === "scissors") ||
     (myChoice === "scissors" && computerChoice === "paper") ||
@@ -55,9 +59,13 @@ function winner() {
     // i won
     myScore(1);
     win.innerText = "win";
+    auraPlayer.style.display = "";
+    auraComputer.style.display = "none";
   } else {
     // i lose
     win.innerText = "lose";
+    auraPlayer.style.display = "none";
+    auraComputer.style.display = "";
   }
 }
 
@@ -104,7 +112,7 @@ window.onclick = function (event) {
   if (event.target == body) {
     modal.style.display = "none";
   }
-}
+};
 
 closeBtn.addEventListener("click", function () {
   modal.style.display = "none";
