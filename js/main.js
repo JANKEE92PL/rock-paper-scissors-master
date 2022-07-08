@@ -11,8 +11,6 @@ const computer = document.getElementById("computer");
 const openBtn = document.getElementById("open");
 const closeBtn = document.getElementById("close");
 const modal = document.getElementById("modal");
-const auraPlayer = document.querySelector(".player");
-const auraComputer = document.querySelector(".computer");
 
 let score = 0;
 
@@ -57,7 +55,6 @@ function winner() {
     // i won
     myScore(1);
     win.innerText = "win";
-    // auraPlayer.display = "block";
   } else {
     // i lose
     win.innerText = "lose";

@@ -27,7 +27,7 @@ header {
   justify-content: space-between;
   border-radius: 10px;
   padding: 20px;
-  margin: 40px 0;
+  margin: 100px 0;
   align-items: center;
 }
 h1 {
@@ -162,46 +162,36 @@ main::after {
   display: none;
   color: white;
   flex-wrap: wrap;
+  position: relative;
 }
 /* Add Aura Efekt to Winners Choice */
 
-.aura{
-  position: relative;
-  transition: all 500ms ease-in-out;
-}
-.select .aura.player {
-  display: none;
-}
-.select .aura.player::before {
-  content: '';
+.select .aura-player::before {
+  content: "";
   background-color: rgba(168, 168, 168, 0.05);
   position: absolute;
   top: 50%;
   left: 50%;
   width: 300px;
   height: 300px;
-  transform: translate(-50%,-47%);
+  transform: translate(-50%, -50%);
   border: rgba(133, 133, 133, 0.05) 50px solid;
   border-radius: 50%;
-  z-index: -10;
-
+  z-index: -1000;
 }
-.select .aura.player::after {
-  content: '';
+.select .aura-player::after {
+  content: "";
   background-color: rgba(133, 133, 133, 0.1);
   position: absolute;
   top: 50%;
   left: 50%;
   width: 450px;
   height: 450px;
-  transform: translate(-50%,-47%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: -11;
+  z-index: -1000;
+}
 
-}
-.select div:last-child {
-  z-index: -1;
-}
 .result {
   font-size: 3rem;
   margin: 0 0 50px;
