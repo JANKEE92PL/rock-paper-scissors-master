@@ -47,14 +47,43 @@
     </main>
 
 
-    <div class="modal-rules" id="modal">
+    <div class="modal-rules" id="modal-rules">
       <div class="modal-rules-content">
         <h2 class="modal-rules-title">rules</h2>
         <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
       </div>
       <div class="modal-rules-image">
         <img src="./images/image-rules.svg" alt="rules">
-
+      </div>
+    </div>
+    <div class="modal-settings" id="modal-settings">
+      <div class="modal-settings-content">
+        <h2 class="modal-settings-title">Settings</h2>
+        <button id="close2"><img src="./images/icon-close.svg" alt="close"></button>
+      </div>
+      <div class="settings-options">
+        <fieldset>
+          <legend>Game Mode</legend>
+          <div>
+            <input type="radio" id="coding" name="types" value="3" checked>
+            <label for="coding">3 Types</label>
+          </div>
+          <div>
+            <input type="radio" id="music" name="types" value="5">
+            <label for="music">5 Types</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Theme</legend>
+          <div>
+            <input type="radio" id="light" name="theme" value="light" checked>
+            <label for="coding">Light</label>
+          </div>
+          <div>
+            <input type="radio" id="dark" name="theme" value="dark">
+            <label for="music">Dark</label>
+          </div>
+        </fieldset>
       </div>
     </div>
     <button class="rules btn btn-secondary" id="open">Rules</button>

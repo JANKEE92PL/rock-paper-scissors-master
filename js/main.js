@@ -10,9 +10,12 @@ const user = document.getElementById("user");
 const computer = document.getElementById("computer");
 const openBtn = document.getElementById("open");
 const closeBtn = document.getElementById("close");
-const modal = document.getElementById("modal");
+const closeBtn2 = document.getElementById("close2");
+const modalRules = document.getElementById("modal-rules");
+const modalSettings = document.getElementById("modal-settings");
 const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
+const settingsBtn = document.getElementById("settings");
 
 let score = 0;
 
@@ -104,16 +107,35 @@ function change(user, choices) {
 }
 
 //modals
+
+// Rules Modal
 openBtn.addEventListener("click", function () {
-  modal.style.display = "flex";
+  modalRules.style.display = "flex";
 });
+
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == body) {
-    modal.style.display = "none";
+    modalRules.style.display = "none";
   }
 };
 
 closeBtn.addEventListener("click", function () {
-  modal.style.display = "none";
+  modalRules.style.display = "none";
+});
+
+// Settings Modal
+
+settingsBtn.addEventListener("click", function () {
+  modalSettings.style.display = "flex";
+});
+
+window.onclick = function (event) {
+  if (event.target == body) {
+    modalSettings.style.display = "none";
+  }
+};
+
+closeBtn2.addEventListener("click", function () {
+  modalSettings.style.display = "none";
 });
