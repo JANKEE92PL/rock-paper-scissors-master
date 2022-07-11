@@ -124,6 +124,13 @@ closeBtn.addEventListener("click", function () {
 // Settings Modal
 
 settingsBtn.addEventListener("click", function () {
+  setMode(settings)
+  setTheme(settings)
+  if (isDefault(settings)) {
+      defaultSettings.disabled = true;
+    } else
+      defaultSettings.disabled = false;
+
   modalSettings.style.display = "flex";
 });
 
@@ -150,6 +157,14 @@ save.addEventListener("click", ()=>{
   setRules(settings)
   modalSettings.style.display = "none";
   alert("Settings saved..." + settings.gameMode + settings.theme) //Only for dev
+})
+
+defaultSettings.addEventListener("click", () =>{
+  restoreDefault(settings);
+  if (settings.defaultSettings == true) {
+    defaultSettings.disabled = true
+  } else
+    defaultSettings.disabled = false
 })
 
 function setMode(settings) {
@@ -196,4 +211,24 @@ function checkTheme(settings) {
     document.body.classList.add("light-mode")
   } else
    document.body.classList.remove("light-mode")
+}
+
+function restoreDefault(settings) {
+  confirm("Are you sure?")
+  settings.gameMode = '3';
+  gameMode3.checked = true;
+  settings.theme = 'dark';
+  dark.checked = true;
+  settings.isDefault = true;
+  setMode(settings)
+  setTheme(settings)
+  checkTheme(settings)
+  renderGame(settings)
+  setRules(settings)
+}
+function isDefault(settings) {
+  if (settings.gameMode == 3 && settings.theme == 'dark') {
+    return true;
+  } else
+  return false
 }
