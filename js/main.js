@@ -144,6 +144,7 @@ const theme = 'light'; // default Theme
 save.addEventListener("click", ()=>{
   setMode(settings)
   setTheme(settings)
+  checkTheme(settings)
   renderGame(settings)
   modalSettings.style.display = "none";
   alert("Settings saved..." + settings.gameMode + settings.theme) //Only for dev
@@ -173,4 +174,10 @@ function renderGame(settings) {
   } else if ( settings.gameMode == '5') {
     logo.src = 'images/logo-bonus.svg';
   }
+}
+function checkTheme(settings) {
+  if (settings.theme == "light") {
+    document.body.classList.add("light-mode")
+  } else
+   document.body.classList.remove("light-mode")
 }

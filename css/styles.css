@@ -16,6 +16,14 @@ body {
   min-height: 100vh;
   font-family: "Barlow Semi Condensed", sans-serif;
 }
+
+.light-mode{
+  background: radial-gradient(
+    circle at 50% 10%,
+    hsl(215, 33%, 84%),
+    hsl(0, 6%, 53%)
+  ) !important;
+}
 .container {
   width: 700px;
   max-width: 100%;
