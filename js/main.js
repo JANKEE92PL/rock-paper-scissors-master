@@ -1,6 +1,6 @@
 // Add Your Scripts here
 const buttons = document.querySelectorAll(".pick");
-const Choice = ["paper", "rock", "scissors"];
+const choice = ["paper", "rock", "scissors"];
 const Score = document.getElementById("score");
 const main = document.getElementById("main");
 const select = document.getElementById("select");
@@ -16,14 +16,15 @@ const modalSettings = document.getElementById("modal-settings");
 const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
 const settingsBtn = document.getElementById("settings");
+let settings = {};
 
 let score = 0;
 
 let myChoice = undefined;
 
 // computer choice
-function computerPick() {
-  return Choice[Math.floor(Math.random() * Choice.length)];
+function computerPick(mode) {
+  return choice[Math.floor(Math.random() * mode)];
 }
 
 // content changes
@@ -38,13 +39,8 @@ buttons.forEach((button) => {
 });
 
 //win or lose or draw
-function winner() {
-  const computerChoice = computerPick();
-  console.log(user);
-  console.log(computer);
-  console.log(myChoice);
-  console.log(computerChoice);
-
+function winner(mode = 3) {
+  const computerChoice = computerPick(mode);
   //;
   change(user, myChoice);
   change(computer, computerChoice);
@@ -139,3 +135,42 @@ window.onclick = function (event) {
 closeBtn2.addEventListener("click", function () {
   modalSettings.style.display = "none";
 });
+
+// Read Settings from User Settings
+
+const gameMode = 3; // default Game with 3 Choices
+const theme = 'light'; // default Theme
+
+save.addEventListener("click", ()=>{
+  setMode(settings)
+  setTheme(settings)
+  renderGame(settings)
+  modalSettings.style.display = "none";
+  alert("Settings saved..." + settings.gameMode + settings.theme) //Only for dev
+})
+
+function setMode(settings) {
+  if (gameMode3.checked) {
+    return settings.gameMode = gameMode3.value
+  } else if (gameMode5.checked) {
+    return settings.gameMode = gameMode5.value
+  } else {
+    alert("please check your settings or clean cache & cookies")
+  }
+}
+function setTheme(settings) {
+  if (light.checked) {
+    return settings.theme = light.value
+  } else if (dark.checked) {
+    return settings.theme = dark.value
+  } else {
+    alert("please check your settings or clean cache & cookies")
+  }
+}
+function renderGame(settings) {
+  if(settings.gameMode == '3'){
+    logo.src = 'images/logo.svg'
+  } else if ( settings.gameMode == '5') {
+    logo.src = 'images/logo-bonus.svg';
+  }
+}

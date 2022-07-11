@@ -86,9 +86,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  right: 10%;
-  top: 10%;
+  border: none;
+}
+.settings:focus{
   border: none;
 }
 .settings img {
@@ -235,7 +235,7 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0 auto;
-  width: 30vw;
+  width: 60vw;
   height: 50vh;
   display: none;
   align-items: center;
@@ -245,7 +245,9 @@ h2 {
   border-radius: 24px;
 }
 .settings-options {
-  background-color: tomato;
+  background-color: rgb(255, 255, 255);
+  border-radius: 24px;
+  padding: 1rem;
   width: 80%;
 }
 .modal-rules-content,
