@@ -147,6 +147,7 @@ save.addEventListener("click", ()=>{
   setTheme(settings)
   checkTheme(settings)
   renderGame(settings)
+  setRules(settings)
   modalSettings.style.display = "none";
   alert("Settings saved..." + settings.gameMode + settings.theme) //Only for dev
 })
@@ -169,9 +170,20 @@ function setTheme(settings) {
     alert("please check your settings or clean cache & cookies")
   }
 }
+function setRules(settings) {
+  if (settings.gameMode == '3') {
+    return rulesImg.src = "./images/image-rules.svg"
+  }
+  else if (settings.gameMode == '5') {
+    return rulesImg.src = "./images/image-rules-bonus.svg"
+  }
+}
 function renderGame(settings) {
   if(settings.gameMode == '3'){
     logo.src = 'images/logo.svg'
+    bonusIcons.forEach(icon => {
+      icon.classList.add("bonus")
+    })
   } else if ( settings.gameMode == '5') {
     logo.src = 'images/logo-bonus.svg';
     bonusIcons.forEach(icon => {
