@@ -16,6 +16,7 @@ const modalSettings = document.getElementById("modal-settings");
 const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
 const settingsBtn = document.getElementById("settings");
+const bonusIcons = document.querySelectorAll(".bonus")
 let settings = {};
 
 let score = 0;
@@ -173,6 +174,9 @@ function renderGame(settings) {
     logo.src = 'images/logo.svg'
   } else if ( settings.gameMode == '5') {
     logo.src = 'images/logo-bonus.svg';
+    bonusIcons.forEach(icon => {
+      icon.classList.remove("bonus")
+    })
   }
 }
 function checkTheme(settings) {

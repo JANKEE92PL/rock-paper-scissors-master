@@ -139,6 +139,13 @@ h1 {
 .scissors {
   background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 }
+.spock {
+background: linear-gradient(to bottom, hsl(189, 59%, 53%), hsl(189, 58%, 57%));;
+}
+.lizard {
+background: linear-gradient(to bottom, hsl(261, 73%, 60%), hsl(261, 72%, 63%));;
+
+}
 main {
   height: 350px;
   width: 450px;
@@ -150,6 +157,9 @@ main {
   margin: 0 auto;
   position: relative;
   max-width: 100%;
+}
+.bonus{
+  display: none;
 }
 main::after {
   background-image: url(../images/bg-triangle.svg);
