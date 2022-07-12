@@ -17,7 +17,7 @@
   <div class="container" id="new">
     <header>
       <h1>
-        <img id="logo"src="images/logo.svg" alt="logo">
+        <img id="logo" src="images/logo.svg" alt="logo">
         <!-- <span>Rock</span>
         <span>Paper</span>
         <span>Scissors</span> -->
@@ -56,52 +56,53 @@
       </button>
     </main>
 
+      <div class="modal-rules" id="modal-rules">
+        <div class="modal-rules-content">
+          <h2 class="modal-rules-title">rules</h2>
+          <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
+        </div>
+        <div class="modal-rules-image">
+          <img src="./images/image-rules.svg" alt="rules" id="rulesImg">
+        </div>
+      </div>
 
-    <div class="modal-rules" id="modal-rules">
-      <div class="modal-rules-content">
-        <h2 class="modal-rules-title">rules</h2>
-        <button id="close"><img src="./images/icon-close.svg" alt="close"></button>
+      <div class="modal-settings" id="modal-settings">
+        <div class="modal-settings-content">
+          <h2 class="modal-settings-title">Settings</h2>
+          <button id="close2"><img src="./images/icon-close.svg" alt="close"></button>
+        </div>
+        <div class="settings-options">
+          <fieldset>
+            <legend>Game Mode</legend>
+            <div>
+              <input type="radio" id="gameMode3" name="types" value="3" checked>
+              <label for="gameMode3">3 Choices</label>
+            </div>
+            <div>
+              <input type="radio" id="gameMode5" name="types" value="5">
+              <label for="gameMode5">5 Choices</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Theme</legend>
+            <div>
+              <input type="radio" id="light" name="theme" value="light">
+              <label for="light">Light</label>
+            </div>
+            <div>
+              <input type="radio" id="dark" name="theme" value="dark" checked>
+              <label for="dark">Dark</label>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" id='save' class="btn btn-info m-3">Save</button>
+        <button type="submit" id='defaultSettings' class="btn btn-warning m-1">Restore Defaults</button>
       </div>
-      <div class="modal-rules-image">
-        <img src="./images/image-rules.svg" alt="rules" id="rulesImg">
-      </div>
+      <button class="rules btn btn-secondary" id="open">Rules</button>
+      <button class="settings btn btn-secondary" id="settings">
+        <img src="./images/icon-settings.svg" alt="settings">
+      </button>
     </div>
-    <div class="modal-settings" id="modal-settings">
-      <div class="modal-settings-content">
-        <h2 class="modal-settings-title">Settings</h2>
-        <button id="close2"><img src="./images/icon-close.svg" alt="close"></button>
-      </div>
-      <div class="settings-options">
-        <fieldset>
-          <legend>Game Mode</legend>
-          <div>
-            <input type="radio" id="gameMode3" name="types" value="3" checked>
-            <label for="coding">3 Choices</label>
-          </div>
-          <div>
-            <input type="radio" id="gameMode5" name="types" value="5">
-            <label for="music">5 Choices</label>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Theme</legend>
-          <div>
-            <input type="radio" id="light" name="theme" value="light">
-            <label for="coding">Light</label>
-          </div>
-          <div>
-            <input type="radio" id="dark" name="theme" value="dark" checked>
-            <label for="music">Dark</label>
-          </div>
-        </fieldset>
-      </div>
-      <button type="submit" id='save' class="btn btn-info m-3">Save</button>
-      <button type="submit" id='defaultSettings' class="btn btn-warning m-1">Restore Defaults</button>
-    </div>
-    <button class="rules btn btn-secondary" id="open">Rules</button>
-    <button class="settings btn btn-secondary" id="settings">
-      <img src="./images/icon-settings.svg" alt="settings">
-    </button>
   </div>
 
   <div class="select" id="select">

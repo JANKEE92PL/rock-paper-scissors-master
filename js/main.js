@@ -16,7 +16,7 @@ const modalSettings = document.getElementById("modal-settings");
 const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
 const settingsBtn = document.getElementById("settings");
-const bonusIcons = document.querySelectorAll(".bonus")
+const bonusIcons = document.querySelectorAll(".bonus");
 let settings = {};
 
 let score = 0;
@@ -124,12 +124,11 @@ closeBtn.addEventListener("click", function () {
 // Settings Modal
 
 settingsBtn.addEventListener("click", function () {
-  setMode(settings)
-  setTheme(settings)
+  setMode(settings);
+  setTheme(settings);
   if (isDefault(settings)) {
-      defaultSettings.disabled = true;
-    } else
-      defaultSettings.disabled = false;
+    defaultSettings.disabled = true;
+  } else defaultSettings.disabled = false;
 
   modalSettings.style.display = "flex";
 });
@@ -147,88 +146,84 @@ closeBtn2.addEventListener("click", function () {
 // Read Settings from User Settings
 
 const gameMode = 3; // default Game with 3 Choices
-const theme = 'light'; // default Theme
+const theme = "light"; // default Theme
 
-save.addEventListener("click", ()=>{
-  setMode(settings)
-  setTheme(settings)
-  checkTheme(settings)
-  renderGame(settings)
-  setRules(settings)
+save.addEventListener("click", () => {
+  setMode(settings);
+  setTheme(settings);
+  checkTheme(settings);
+  renderGame(settings);
+  setRules(settings);
   modalSettings.style.display = "none";
-  alert("Settings saved..." + settings.gameMode + settings.theme) //Only for dev
-})
+  alert("Settings saved..." + settings.gameMode + settings.theme); //Only for dev
+});
 
-defaultSettings.addEventListener("click", () =>{
+defaultSettings.addEventListener("click", () => {
   restoreDefault(settings);
   if (settings.defaultSettings == true) {
-    defaultSettings.disabled = true
-  } else
-    defaultSettings.disabled = false
-})
+    defaultSettings.disabled = true;
+  } else defaultSettings.disabled = false;
+});
 
 function setMode(settings) {
   if (gameMode3.checked) {
-    return settings.gameMode = gameMode3.value
+    return (settings.gameMode = gameMode3.value);
   } else if (gameMode5.checked) {
-    return settings.gameMode = gameMode5.value
+    return (settings.gameMode = gameMode5.value);
   } else {
-    alert("please check your settings or clean cache & cookies")
+    alert("please check your settings or clean cache & cookies");
   }
 }
 function setTheme(settings) {
   if (light.checked) {
-    return settings.theme = light.value
+    return (settings.theme = light.value);
   } else if (dark.checked) {
-    return settings.theme = dark.value
+    return (settings.theme = dark.value);
   } else {
-    alert("please check your settings or clean cache & cookies")
+    alert("please check your settings or clean cache & cookies");
   }
 }
 function setRules(settings) {
-  if (settings.gameMode == '3') {
-    return rulesImg.src = "./images/image-rules.svg"
-  }
-  else if (settings.gameMode == '5') {
-    return rulesImg.src = "./images/image-rules-bonus.svg"
+  if (settings.gameMode == "3") {
+    return (rulesImg.src = "./images/image-rules.svg");
+  } else if (settings.gameMode == "5") {
+    return (rulesImg.src = "./images/image-rules-bonus.svg");
   }
 }
 function renderGame(settings) {
-  if(settings.gameMode == '3'){
-    logo.src = 'images/logo.svg'
-    bonusIcons.forEach(icon => {
-      icon.classList.add("bonus")
-    })
-  } else if ( settings.gameMode == '5') {
-    logo.src = 'images/logo-bonus.svg';
-    bonusIcons.forEach(icon => {
-      icon.classList.remove("bonus")
-    })
+  if (settings.gameMode == "3") {
+    logo.src = "images/logo.svg";
+    bonusIcons.forEach((icon) => {
+      icon.classList.add("bonus");
+    });
+  } else if (settings.gameMode == "5") {
+    logo.src = "images/logo-bonus.svg";
+    bonusIcons.forEach((icon) => {
+      icon.classList.remove("bonus");
+    });
   }
 }
 function checkTheme(settings) {
   if (settings.theme == "light") {
-    document.body.classList.add("light-mode")
-  } else
-   document.body.classList.remove("light-mode")
+    document.body.classList.add("light-mode");
+  } else document.body.classList.remove("light-mode");
 }
 
 function restoreDefault(settings) {
-  confirm("Are you sure?")
-  settings.gameMode = '3';
+  confirm("Are you sure?");
+  settings.gameMode = "3";
   gameMode3.checked = true;
-  settings.theme = 'dark';
+  settings.theme = "dark";
   dark.checked = true;
   settings.isDefault = true;
-  setMode(settings)
-  setTheme(settings)
-  checkTheme(settings)
-  renderGame(settings)
-  setRules(settings)
+  setMode(settings);
+  setTheme(settings);
+  checkTheme(settings);
+  renderGame(settings);
+  setRules(settings);
 }
 function isDefault(settings) {
-  if (settings.gameMode == 3 && settings.theme == 'dark') {
+  if (settings.gameMode == 3 && settings.theme == "dark") {
     return true;
-  } else
-  return false
+  } else return false;
 }

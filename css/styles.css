@@ -17,7 +17,7 @@ body {
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
-.light-mode{
+.light-mode {
   background: radial-gradient(
     circle at 50% 10%,
     hsl(215, 33%, 84%),
@@ -96,7 +96,7 @@ h1 {
   align-items: center;
   border: none;
 }
-.settings:focus{
+.settings:focus {
   border: none;
 }
 .settings img {
@@ -140,11 +140,18 @@ h1 {
   background: linear-gradient(to bottom, hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 }
 .spock {
-background: linear-gradient(to bottom, hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+  background: linear-gradient(
+    to bottom,
+    hsl(189, 59%, 53%),
+    hsl(189, 58%, 57%)
+  );
 }
 .lizard {
-background: linear-gradient(to bottom, hsl(261, 73%, 60%), hsl(261, 72%, 63%));
-
+  background: linear-gradient(
+    to bottom,
+    hsl(261, 73%, 60%),
+    hsl(261, 72%, 63%)
+  );
 }
 main {
   height: 350px;
@@ -158,7 +165,7 @@ main {
   position: relative;
   max-width: 100%;
 }
-.bonus{
+.bonus {
   display: none;
 }
 main::after {
@@ -245,6 +252,7 @@ h2 {
   text-transform: uppercase;
   font-family: inherit;
 }
+
 .modal-rules,
 .modal-settings {
   background-color: rgba(241, 241, 241, 0.96);
@@ -254,7 +262,7 @@ h2 {
   transform: translate(-50%, -50%);
   margin: 0 auto;
   width: 60vw;
-  height: 50vh;
+  height: 60vh;
   display: none;
   align-items: center;
   justify-content: center;
@@ -276,13 +284,13 @@ h2 {
   width: 80%;
   margin: 2rem;
 }
-.modal-rules-title{
+.modal-rules-title {
   font-size: 40px;
   font-weight: 700;
   margin-left: 20%;
 }
 
-.modal-settings-title{
+.modal-settings-title {
   font-size: 40px;
   font-weight: 700;
 }
