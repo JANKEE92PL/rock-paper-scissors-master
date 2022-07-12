@@ -24,7 +24,10 @@ let score = 0;
 let myChoice = undefined;
 
 // computer choice
-function computerPick(mode) {
+function computerPick(mode = 3) {
+  if (mode == 5) {
+    choice.push("spock", "lizard");
+  }
   return choice[Math.floor(Math.random() * mode)];
 }
 
@@ -87,19 +90,26 @@ function change(user, choices) {
   user.classList.remove("paper");
   user.classList.remove("rock");
   user.classList.remove("scissors");
+  user.classList.remove("spock");
+  user.classList.remove("lizard");
 
   const img = user.querySelector("img");
 
   if (choices === "paper") {
-    console.log(choices);
     user.classList.add("paper");
     img.src = "./images/icon-paper.svg";
   } else if (choices === "rock") {
     user.classList.add("rock");
     img.src = "./images/icon-rock.svg";
-  } else {
+  } else if (choices === "scissors") {
     user.classList.add("scissors");
     img.src = "./images/icon-scissors.svg";
+  } else if (choices === "spock") {
+    user.classList.add("spock");
+    img.src = "./images/icon-spock.svg";
+  } else {
+    user.classList.add("lizard");
+    img.src = "./images/icon-lizard.svg";
   }
 }
 
@@ -245,11 +255,11 @@ function setBackgroundImage(settings) {
 function setCircularBonus(settings) {
   if (settings.gameMode == "5") {
     for (let circle of main.children) {
-      circle.classList.add('bonus-circle')
-  }
+      circle.classList.add("bonus-circle");
+    }
   } else if (settings.gameMode == "3") {
     for (let circle of main.children) {
-      circle.classList.remove('bonus-circle')
-  }
+      circle.classList.remove("bonus-circle");
+    }
   }
 }
