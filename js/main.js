@@ -154,7 +154,8 @@ save.addEventListener("click", () => {
   checkTheme(settings);
   renderGame(settings);
   setRules(settings);
-  setBackgroundImage(settings)
+  setBackgroundImage(settings);
+  setCircularBonus(settings);
   modalSettings.style.display = "none";
   alert("Settings saved..." + settings.gameMode + settings.theme); //Only for dev
 });
@@ -222,8 +223,8 @@ function restoreDefault(settings) {
   checkTheme(settings);
   renderGame(settings);
   setRules(settings);
-  setBackgroundImage(settings)
-
+  setBackgroundImage(settings);
+  setCircularBonus(settings);
 }
 function isDefault(settings) {
   if (settings.gameMode == 3 && settings.theme == "dark") {
@@ -238,5 +239,17 @@ function setBackgroundImage(settings) {
   } else if (settings.gameMode == "3") {
     bgImage.classList.remove("backgroundImageBonus");
     bgImage.classList.add("backgroundImage");
+  }
+}
+
+function setCircularBonus(settings) {
+  if (settings.gameMode == "5") {
+    for (let circle of main.children) {
+      circle.classList.add('bonus-circle')
+  }
+  } else if (settings.gameMode == "3") {
+    for (let circle of main.children) {
+      circle.classList.remove('bonus-circle')
+  }
   }
 }
