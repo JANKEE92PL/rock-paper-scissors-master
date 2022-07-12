@@ -17,7 +17,7 @@ const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
 const settingsBtn = document.getElementById("settingsBtn");
 const bonusIcons = document.querySelectorAll(".bonus");
-let settings = {"gameMode":"3"};
+let settings = { gameMode: "3" };
 
 let score = 0;
 
@@ -25,12 +25,12 @@ let myChoice = undefined;
 
 // computer choice
 function computerPick(settings) {
-  if (settings.gameMode == '3' && choice.length != 3) {
-    choice.splice(choice.length - 2)
-  }else if (settings.gameMode == '5' && choice.length != 5) {
+  if (settings.gameMode == "3" && choice.length != 3) {
+    choice.splice(choice.length - 2);
+  } else if (settings.gameMode == "5" && choice.length != 5) {
     choice.push("spock", "lizard");
   }
-  return choice[Math.floor(Math.random() * (settings.gameMode))];
+  return choice[Math.floor(Math.random() * settings.gameMode)];
 }
 
 // content changes
@@ -59,7 +59,15 @@ function winner() {
   } else if (
     (myChoice === "rock" && computerChoice === "scissors") ||
     (myChoice === "scissors" && computerChoice === "paper") ||
-    (myChoice === "paper" && computerChoice === "scissors")
+    (myChoice === "paper" && computerChoice === "scissors") ||
+    // Gamemode = 5
+    (myChoice === "scissors" && computerChoice === "lizard") ||
+    (myChoice === "paper" && computerChoice === "spock") ||
+    (myChoice === "rock" && computerChoice === "lizard") ||
+    (myChoice === "lizard" && computerChoice === "paper") ||
+    (myChoice === "lizard" && computerChoice === "spock") ||
+    (myChoice === "spock" && computerChoice === "scissors") ||
+    (myChoice === "spock" && computerChoice === "rock")
   ) {
     // i won
     myScore(1);
@@ -169,7 +177,6 @@ save.addEventListener("click", () => {
   setBackgroundImage(settings);
   setCircularBonus(settings);
   modalSettings.style.display = "none";
-  alert("Settings saved..." + settings.gameMode + settings.theme); //Only for dev
 });
 
 defaultSettings.addEventListener("click", () => {

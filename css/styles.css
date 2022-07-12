@@ -278,6 +278,33 @@ main {
   border-radius: 50%;
   z-index: -1000;
 }
+body.light-mode .select .aura-player::before,
+body.light-mode .select .aura-computer::before {
+  content: "";
+  background-color: rgba(26, 54, 124, 0.05);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  border: rgba(68, 72, 109, 0.05) 50px solid;
+  border-radius: 50%;
+  z-index: -1000;
+}
+body.light-mode .select .aura-player::after,
+body.light-mode .select .aura-computer::after {
+  content: "";
+  background-color: rgba(83, 88, 218, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 450px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1000;
+}
 
 .result {
   font-size: 3rem;
