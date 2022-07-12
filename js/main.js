@@ -154,6 +154,7 @@ save.addEventListener("click", () => {
   checkTheme(settings);
   renderGame(settings);
   setRules(settings);
+  setBackgroundImage(settings)
   modalSettings.style.display = "none";
   alert("Settings saved..." + settings.gameMode + settings.theme); //Only for dev
 });
@@ -221,9 +222,21 @@ function restoreDefault(settings) {
   checkTheme(settings);
   renderGame(settings);
   setRules(settings);
+  setBackgroundImage(settings)
+
 }
 function isDefault(settings) {
   if (settings.gameMode == 3 && settings.theme == "dark") {
     return true;
   } else return false;
+}
+
+function setBackgroundImage(settings) {
+  if (settings.gameMode == "5") {
+    bgImage.classList.remove("backgroundImage");
+    bgImage.classList.add("backgroundImageBonus");
+  } else if (settings.gameMode == "3") {
+    bgImage.classList.remove("backgroundImageBonus");
+    bgImage.classList.add("backgroundImage");
+  }
 }

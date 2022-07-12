@@ -168,7 +168,7 @@ main {
 .bonus {
   display: none;
 }
-main::after {
+#main .backgroundImage {
   background-image: url(../images/bg-triangle.svg);
   content: "";
   height: 70%;
@@ -176,6 +176,17 @@ main::after {
   background-repeat: no-repeat;
   position: absolute;
   top: 23%;
+  left: 15%;
+  z-index: -1;
+}
+#main .backgroundImageBonus {
+  background-image: url(../images/bg-pentagon.svg);
+  content: "";
+  height: 100%;
+  width: 85%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10%;
   left: 15%;
   z-index: -1;
 }
@@ -303,13 +314,15 @@ h2 {
   transform: scale(1.5);
   font-family: inherit;
 }
-#close {
+#close,
+#close2 {
   /* position: absolute;
   top: 5%;
   right: 10%; */
   transition: transform 100ms;
 }
-#close:active {
+#close:active,
+#close2:active {
   transform: scale(75%);
 }
 .modal-rules-image > img {
