@@ -15,20 +15,22 @@ const modalRules = document.getElementById("modal-rules");
 const modalSettings = document.getElementById("modal-settings");
 const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
-const settingsBtn = document.getElementById("settings");
+const settingsBtn = document.getElementById("settingsBtn");
 const bonusIcons = document.querySelectorAll(".bonus");
-let settings = {};
+let settings = {"gameMode":"3"};
 
 let score = 0;
 
 let myChoice = undefined;
 
 // computer choice
-function computerPick(mode = 3) {
-  if (mode == 5) {
+function computerPick(settings) {
+  if (settings.gameMode == '3' && choice.length != 3) {
+    choice.splice(choice.length - 2)
+  }else if (settings.gameMode == '5' && choice.length != 5) {
     choice.push("spock", "lizard");
   }
-  return choice[Math.floor(Math.random() * mode)];
+  return choice[Math.floor(Math.random() * (settings.gameMode))];
 }
 
 // content changes
@@ -43,8 +45,8 @@ buttons.forEach((button) => {
 });
 
 //win or lose or draw
-function winner(mode = 3) {
-  const computerChoice = computerPick(mode);
+function winner() {
+  const computerChoice = computerPick(settings);
   //;
   change(user, myChoice);
   change(computer, computerChoice);
