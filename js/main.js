@@ -272,3 +272,8 @@ function setCircularBonus(settings) {
     }
   }
 }
+
+function readLang(settings) {
+  const data = require('languages.json');
+  console.log(data)
+}
