@@ -177,6 +177,7 @@ save.addEventListener("click", () => {
   setBackgroundImage(settings);
   setCircularBonus(settings);
   modalSettings.style.display = "none";
+  setLanguage(settings);
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -211,6 +212,9 @@ function setRules(settings) {
     return (rulesImg.src = "./images/image-rules-bonus.svg");
   }
 }
+function setLanguage(settings) {
+  settings.language = language.value;
+}
 function renderGame(settings) {
   if (settings.gameMode == "3") {
     logo.src = "images/logo.svg";
@@ -237,6 +241,7 @@ function restoreDefault(settings) {
   settings.theme = "dark";
   dark.checked = true;
   settings.isDefault = true;
+  settings.language = "english"
   setMode(settings);
   setTheme(settings);
   checkTheme(settings);
@@ -246,7 +251,7 @@ function restoreDefault(settings) {
   setCircularBonus(settings);
 }
 function isDefault(settings) {
-  if (settings.gameMode == 3 && settings.theme == "dark") {
+  if (settings.gameMode == 3 && settings.theme == "dark" && settings.language == "english") {
     return true;
   } else return false;
 }
@@ -273,7 +278,19 @@ function setCircularBonus(settings) {
   }
 }
 
-function readLang(settings) {
-  const data = require('languages.json');
-  console.log(data)
+function readLangFile() {
+  fetch("js/languages.json")
+    .then((res) => res.json())
+    .then((data) => console.table(data))
+    .catch((error) => console.error(error));
+}
+
+language.addEventListener("change",() => {
+  return language.value
+})
+
+function setLang(settings) {
+  if (readLangFile() == settings.language) {
+    console.log("this is set:" + settings.language)
+  }
 }
