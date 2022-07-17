@@ -17,6 +17,13 @@ const auraPlayer = document.querySelector(".aura-player");
 const auraComputer = document.querySelector(".aura-computer");
 const settingsBtn = document.getElementById("settingsBtn");
 const bonusIcons = document.querySelectorAll(".bonus");
+const choicesTxt = document.querySelectorAll(".choices");
+const title = document.getElementsByTagName("title")[0];
+const rulesTxt = document.querySelector(".modal-rules-title");
+const settingsTxt = document.querySelector(".modal-settings-title");
+const labels = document.getElementsByTagName("label");
+const resultTxt = document.querySelector(".result");
+const words = {};
 let settings = { gameMode: "3" };
 
 let score = 0;
@@ -178,6 +185,7 @@ save.addEventListener("click", () => {
   setCircularBonus(settings);
   modalSettings.style.display = "none";
   setLanguage(settings);
+  setTranslation(settings);
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -241,7 +249,7 @@ function restoreDefault(settings) {
   settings.theme = "dark";
   dark.checked = true;
   settings.isDefault = true;
-  settings.language = "english"
+  settings.language = "english";
   setMode(settings);
   setTheme(settings);
   checkTheme(settings);
@@ -251,7 +259,11 @@ function restoreDefault(settings) {
   setCircularBonus(settings);
 }
 function isDefault(settings) {
-  if (settings.gameMode == 3 && settings.theme == "dark" && settings.language == "english") {
+  if (
+    settings.gameMode == 3 &&
+    settings.theme == "dark" &&
+    settings.language == "english"
+  ) {
     return true;
   } else return false;
 }
@@ -278,19 +290,127 @@ function setCircularBonus(settings) {
   }
 }
 
-function readLangFile() {
-  fetch("js/languages.json")
-    .then((res) => res.json())
-    .then((data) => console.table(data))
-    .catch((error) => console.error(error));
+async function readLangFile() {
+  try {
+    let response = await fetch("js/languages.json");
+    return await response.json();
+  } catch (error) {
+    console.error(console.error());
+  }
 }
 
-language.addEventListener("change",() => {
-  return language.value
-})
+language.addEventListener("change", () => {
+  return language.value;
+});
 
-function setLang(settings) {
-  if (readLangFile() == settings.language) {
-    console.log("this is set:" + settings.language)
+async function setTranslation(settings) {
+  let data = await readLangFile();
+  if (settings.language == "english") {
+    let english = data[0];
+    title.innerText = english.dictionary.title;
+    scoreTxt.innerText = english.dictionary.score;
+    rulesTxt.innerText = english.dictionary.rules;
+    openBtn.innerText = english.dictionary.rules;
+    settingsTxt.innerText = english.dictionary.settings;
+    gameModeTxt.innerText = english.dictionary.gamemode;
+    choicesTxt.forEach(function (node) {
+      node.innerText = english.dictionary.choices;
+    });
+    themeTxt.innerText = english.dictionary.theme;
+    labels[2].innerText = english.dictionary.light;
+    labels[3].innerText = english.dictionary.dark;
+    defaultSettings.innerText = english.dictionary.restoreDefaults;
+    save.innerText = english.dictionary.save;
+    pickedTxt.innerText = english.dictionary.picked
+    resultTxt.innerText = english.dictionary.you;
+  } else if (settings.language == "german") {
+    let german = data[1];
+    title.innerText = german.dictionary.title;
+    scoreTxt.innerText = german.dictionary.score;
+    rulesTxt.innerText = german.dictionary.rules;
+    openBtn.innerText = german.dictionary.rules;
+    settingsTxt.innerText = german.dictionary.settings;
+    gameModeTxt.innerText = german.dictionary.gamemode;
+    choicesTxt.forEach(function (node) {
+      node.innerText = german.dictionary.choices;
+    });
+    themeTxt.innerText = german.dictionary.theme;
+    labels[2].innerText = german.dictionary.light;
+    labels[3].innerText = german.dictionary.dark;
+    defaultSettings.innerText = german.dictionary.restoreDefaults;
+    save.innerText = german.dictionary.save;
+    resultTxt.innerText = german.dictionary.you;
+    win.innerText = german.dictionary.win;
+
+
+  } else if (settings.language == "polish") {
+    let polish = data[2];
+    title.innerText = polish.dictionary.title;
+    scoreTxt.innerText = polish.dictionary.score;
+    rulesTxt.innerText = polish.dictionary.rules;
+    openBtn.innerText = polish.dictionary.rules;
+    settingsTxt.innerText = polish.dictionary.settings;
+    gameModeTxt.innerText = polish.dictionary.gamemode;
+    choicesTxt.forEach(function (node) {
+      node.innerText = polish.dictionary.choices;
+    });
+    themeTxt.innerText = polish.dictionary.theme;
+    labels[2].innerText = polish.dictionary.light;
+    labels[3].innerText = polish.dictionary.dark;
+    defaultSettings.innerText = polish.dictionary.restoreDefaults;
+    save.innerText = polish.dictionary.save;
+
+  } else if (settings.language == "hungarian") {
+    let hungarian = data[3];
+    title.innerText = hungarian.dictionary.title;
+    scoreTxt.innerText = hungarian.dictionary.score;
+    rulesTxt.innerText = hungarian.dictionary.rules;
+    openBtn.innerText = hungarian.dictionary.rules;
+    settingsTxt.innerText = hungarian.dictionary.settings;
+    gameModeTxt.innerText = hungarian.dictionary.gamemode;
+    choicesTxt.forEach(function (node) {
+      node.innerText = hungarian.dictionary.choices;
+    });
+    themeTxt.innerText = hungarian.dictionary.theme;
+    labels[2].innerText = hungarian.dictionary.light;
+    labels[3].innerText = hungarian.dictionary.dark;
+    defaultSettings.innerText = hungarian.dictionary.restoreDefaults;
+    save.innerText = hungarian.dictionary.save;
+
+  } else if (settings.language == "french") {
+    let french = data[4];
+    title.innerText = french.dictionary.title;
+    scoreTxt.innerText = french.dictionary.score;
+    rulesTxt.innerText = french.dictionary.rules;
+    openBtn.innerText = french.dictionary.rules;
+    settingsTxt.innerText = french.dictionary.settings;
+    gameModeTxt.innerText = french.dictionary.gamemode;
+    choicesTxt.forEach(function (node) {
+      node.innerText = french.dictionary.choices;
+    });
+    themeTxt.innerText = french.dictionary.theme;
+    labels[2].innerText = french.dictionary.light;
+    labels[3].innerText = french.dictionary.dark;
+    defaultSettings.innerText = french.dictionary.restoreDefaults;
+    save.innerText = french.dictionary.save;
+
+  } else if (settings.language == "spanish") {
+    let spanish = data[5];
+    title.innerText = spanish.dictionary.title;
+    scoreTxt.innerText = spanish.dictionary.score;
+    rulesTxt.innerText = spanish.dictionary.rules;
+    openBtn.innerText = spanish.dictionary.rules;
+    settingsTxt.innerText = spanish.dictionary.settings;
+    gameModeTxt.innerText = spanish.dictionary.gamemode;
+    choicesTxt.forEach(function (node) {
+      node.innerText = spanish.dictionary.choices;
+    });
+    themeTxt.innerText = spanish.dictionary.theme;
+    labels[2].innerText = spanish.dictionary.light;
+    labels[3].innerText = spanish.dictionary.dark;
+    defaultSettings.innerText = spanish.dictionary.restoreDefaults;
+    save.innerText = spanish.dictionary.save;
+
   }
+  return data;
 }

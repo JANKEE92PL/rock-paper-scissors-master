@@ -119,11 +119,11 @@
       "playAgain": "Rejouer",
       "housePicked": "adversaire de sélection"
     }
-  },{
+  },
+  {
     "id": 5,
     "language": "spanish",
     "languageNative": "espanola",
-
     "code": "es",
     "dictionary": {
       "title": "Jankee92PL | Pierre papier ciseaux",
