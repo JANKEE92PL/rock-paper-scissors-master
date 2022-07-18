@@ -18,10 +18,10 @@
       "restoreDefaults": "Restore Defaults",
       "save": "Save",
       "picked": "You picked",
+      "housePicked": "The house picked",
       "you": "You",
       "win": "win",
-      "playAgain": "play again",
-      "housePicked": "The house picked"
+      "playAgain": "play again"
     }
   },
   {
@@ -43,10 +43,10 @@
       "restoreDefaults": "Werkseinstellungen",
       "save": "Speichern",
       "picked": "Deine Wahl",
+      "housePicked": "Auswahl Gegner",
       "you": "Du",
       "win": "Gewonnen",
-      "playAgain": "Nochmal spielen",
-      "housePicked": "Auswahl Gegner"
+      "playAgain": "Nochmal spielen"
     }
   },
   {
@@ -68,10 +68,10 @@
       "restoreDefaults": "Ustawienia domyślne",
       "save": "Zapisz",
       "picked": "Twój wybór",
+      "housePicked": "Wybór przeciwnika",
       "you": "Ty",
       "win": "Wygrał",
-      "playAgain": "Zagraj ponownie",
-      "housePicked": "Wybór przeciwnika"
+      "playAgain": "Zagraj ponownie"
     }
   },
   {
@@ -93,10 +93,10 @@
       "restoreDefaults": "Alapbeállítások",
       "save": "Megment",
       "picked": "a te döntésed",
+      "housePicked": "Az ellenfél választása",
       "you": "Ön",
       "win": "Megnyerte",
-      "playAgain": "Játszd újra",
-      "housePicked": "Az ellenfél választása"
+      "playAgain": "Játszd újra"
     }
   },
   {
@@ -118,10 +118,10 @@
       "restoreDefaults": "paramètres par défaut",
       "save": "Enregistrer sur ordinateur",
       "picked": "Votre choix",
+      "housePicked": "adversaire de sélection",
       "you": "Tu",
       "win": "a gagné",
-      "playAgain": "Rejouer",
-      "housePicked": "adversaire de sélection"
+      "playAgain": "Rejouer"
     }
   },
   {
@@ -143,10 +143,10 @@
       "restoreDefaults": "Configuración por defecto",
       "save": "Guardar",
       "picked": "Tu elección",
+      "housePicked": "Oponente de selección",
       "you": "Tú",
       "win": "Ganó",
-      "playAgain": "Juega de nuevo",
-      "housePicked": "Oponente de selección"
+      "playAgain": "Juega de nuevo"
     }
   }
 ]

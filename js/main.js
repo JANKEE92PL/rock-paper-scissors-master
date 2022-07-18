@@ -1,4 +1,27 @@
-// Add Your Scripts here
+//* IDEAS
+
+//? Score Reset Button
+
+//? Save Settings Obj to Localstorage
+
+//? TRIGGER Eacht 10 Score Steps Fireworks / Shower
+
+//? HIGHSCORE BOARD WITH USER FORM => Congrats new Highscore // please Enter your name => HighscoreArray.push(user)
+
+//? CLOSE GAME BUTTON
+
+//? RESTART BUTTON
+
+//? COMBO SCREEN IF 3x in ROW WIN
+  //? MULTIPLIKATOR IF 5x in ROW WIN
+    //? AWESOME SCREEN If 7x in ROW WIN
+      //? INCREDIBLE SCREEN If 10x in ROW WIN
+      // EACH WITH SHOWER EFFEKT!
+
+//? THANK YOU SITE AND FEEDBACK FORM / DIRECT TO MY GITHUB PROFILE
+//* IDEAS END
+
+
 const buttons = document.querySelectorAll(".pick");
 const choice = ["paper", "rock", "scissors"];
 const Score = document.getElementById("score");
@@ -419,6 +442,9 @@ async function setTranslation(settings) {
     languageTxt.innerText = english.dictionary.language
     save.innerText = english.dictionary.save;
     pickedTxt.innerText = english.dictionary.picked
+    pickedhouseTxt.innerText = english.dictionary.housePicked
+
+
 
   } else if (settings.language == "german") {
     let german = data[1];
@@ -435,8 +461,10 @@ async function setTranslation(settings) {
     labels[2].innerText = german.dictionary.light;
     labels[3].innerText = german.dictionary.dark;
     defaultSettings.innerText = german.dictionary.restoreDefaults;
-    languageTxt.innerText = german.dictionary.language
+    languageTxt.innerText = german.dictionary.language;
     save.innerText = german.dictionary.save;
+    pickedTxt.innerText = german.dictionary.picked;
+    pickedhouseTxt.innerText = german.dictionary.housePicked
 
 
   } else if (settings.language == "polish") {
@@ -456,6 +484,9 @@ async function setTranslation(settings) {
     defaultSettings.innerText = polish.dictionary.restoreDefaults;
     languageTxt.innerText = polish.dictionary.language
     save.innerText = polish.dictionary.save;
+    pickedTxt.innerText = polish.dictionary.picked;
+    pickedhouseTxt.innerText = polish.dictionary.housePicked
+
 
   } else if (settings.language == "hungarian") {
     let hungarian = data[3];
@@ -474,6 +505,9 @@ async function setTranslation(settings) {
     defaultSettings.innerText = hungarian.dictionary.restoreDefaults;
     languageTxt.innerText = hungarian.dictionary.language
     save.innerText = hungarian.dictionary.save;
+    pickedTxt.innerText = hungarian.dictionary.picked;
+    pickedhouseTxt.innerText = hungarian.dictionary.housePicked
+
 
   } else if (settings.language == "french") {
     let french = data[4];
@@ -491,8 +525,10 @@ async function setTranslation(settings) {
     labels[3].innerText = french.dictionary.dark;
     defaultSettings.innerText = french.dictionary.restoreDefaults;
     languageTxt.innerText = french.dictionary.language
-
     save.innerText = french.dictionary.save;
+    pickedTxt.innerText = french.dictionary.picked;
+    pickedhouseTxt.innerText = french.dictionary.housePicked
+
 
   } else if (settings.language == "spanish") {
     let spanish = data[5];
@@ -511,6 +547,9 @@ async function setTranslation(settings) {
     defaultSettings.innerText = spanish.dictionary.restoreDefaults;
     defaultSettings.innerText = spanish.dictionary.restoreDefaults;
     save.innerText = spanish.dictionary.save;
+    pickedTxt.innerText = spanish.dictionary.picked;
+    pickedhouseTxt.innerText = spanish.dictionary.housePicked
+
 
   }
   return data;
