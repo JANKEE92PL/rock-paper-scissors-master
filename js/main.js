@@ -13,10 +13,10 @@
 //? RESTART BUTTON
 
 //? COMBO SCREEN IF 3x in ROW WIN
-  //? MULTIPLIKATOR IF 5x in ROW WIN
-    //? AWESOME SCREEN If 7x in ROW WIN
-      //? INCREDIBLE SCREEN If 10x in ROW WIN
-      // EACH WITH SHOWER EFFEKT!
+//? MULTIPLIKATOR IF 5x in ROW WIN
+//? AWESOME SCREEN If 7x in ROW WIN
+//? INCREDIBLE SCREEN If 10x in ROW WIN
+// EACH WITH SHOWER EFFEKT!
 
 //? THANK YOU SITE AND FEEDBACK FORM / DIRECT TO MY GITHUB PROFILE
 //* IDEAS END
@@ -368,7 +368,6 @@ function restoreDefault(settings) {
   settings.theme = "dark";
   dark.checked = true;
   settings.isDefault = true;
-  settings.language = "english";
   setMode(settings);
   setTheme(settings);
   checkTheme(settings);
@@ -380,8 +379,7 @@ function restoreDefault(settings) {
 function isDefault(settings) {
   if (
     settings.gameMode == 3 &&
-    settings.theme == "dark" &&
-    settings.language == "english"
+    settings.theme == "dark"
   ) {
     return true;
   } else return false;
