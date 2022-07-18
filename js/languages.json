@@ -5,7 +5,7 @@
     "languageNative": "english",
     "code": "en",
     "dictionary": {
-      "title": "Jankee92PL | Rock, Paper, Scissors",
+      "title": "Rock, Paper, Scissors",
       "score": "Score",
       "rules": "Rules",
       "settings": "Settings",
@@ -30,7 +30,7 @@
     "languageNative": "deutsch",
     "code": "de",
     "dictionary": {
-      "title": "Jankee92PL | Stein, Papier, Schere",
+      "title": "Stein, Papier, Schere",
       "score": "Punkte",
       "rules": "Regeln",
       "settings": "Einstellungen",
@@ -55,7 +55,7 @@
     "languageNative": "polski",
     "code": "pl",
     "dictionary": {
-      "title": "Jankee92PL | Kamień, Papier, Nożyce",
+      "title": "Kamień, Papier, Nożyce",
       "score": "Punkty",
       "rules": "Zasady Gry",
       "settings": "Ustawienia",
@@ -80,7 +80,7 @@
     "languageNative": "magyar",
     "code": "hu",
     "dictionary": {
-      "title": "Jankee92PL | Kő, Papír, Olló",
+      "title": "Kő, Papír, Olló",
       "score": "Pontok",
       "rules": "Játékszabályok",
       "settings": "Beállítások",
@@ -105,7 +105,7 @@
     "languageNative": "français",
     "code": "fr",
     "dictionary": {
-      "title": "Jankee92PL | Pierre papier ciseaux",
+      "title": "Pierre papier ciseaux",
       "score": "Points",
       "rules": "Règles",
       "settings": "Réglages",
@@ -130,7 +130,7 @@
     "languageNative": "espanola",
     "code": "es",
     "dictionary": {
-      "title": "Jankee92PL | Piedra Papel tijeras",
+      "title": "Piedra Papel tijeras",
       "score": "Puntos",
       "rules": "Normas",
       "settings": "Ajustes",
