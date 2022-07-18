@@ -21,7 +21,6 @@
 //? THANK YOU SITE AND FEEDBACK FORM / DIRECT TO MY GITHUB PROFILE
 //* IDEAS END
 
-
 const buttons = document.querySelectorAll(".pick");
 const choice = ["paper", "rock", "scissors"];
 const Score = document.getElementById("score");
