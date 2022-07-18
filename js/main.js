@@ -23,8 +23,8 @@ const rulesTxt = document.querySelector(".modal-rules-title");
 const settingsTxt = document.querySelector(".modal-settings-title");
 const labels = document.getElementsByTagName("label");
 const resultTxt = document.querySelector(".result");
-const words = {};
-let settings = { gameMode: "3" };
+
+let settings = { gameMode: "3", theme: 'dark', language: 'english' };
 
 let score = 0;
 
@@ -60,7 +60,31 @@ function winner() {
 
   if (myChoice === computerChoice) {
     //draw
-    win.innerText = "draw";
+    switch (settings.language) {
+      case "english":
+        win.innerText = "You Draw"
+        break;
+      case "german":
+        win.innerText = "Remis";
+        break;
+      case "polish":
+        win.innerText = "Remis";
+        break;
+      case "hungarian":
+        win.innerText = "Húz";
+        break;
+      case "french":
+        win.innerText = "Dessiner";
+        break;
+      case "spanish":
+        win.innerText = "Dibujar";
+        break;
+
+      default:
+        win.innerText = "You Draw";
+
+        break;
+    }
     auraPlayer.style.display = "none";
     auraComputer.style.display = "none";
   } else if (
@@ -78,12 +102,61 @@ function winner() {
   ) {
     // i won
     myScore(1);
-    win.innerText = "win";
+    switch (settings.language) {
+      case "english":
+        win.innerText = "You Win"
+        break;
+      case "german":
+        win.innerText = "Gewonnen";
+        break;
+      case "polish":
+        win.innerText = "Wygrałeś";
+        break;
+      case "hungarian":
+        win.innerText = "Nyerte";
+        break;
+      case "french":
+        win.innerText = "a gagné";
+        break;
+      case "spanish":
+        win.innerText = "Ganó";
+        break;
+
+      default:
+        win.innerText = "You Win";
+
+        break;
+    }
+
     auraPlayer.style.display = "";
     auraComputer.style.display = "none";
   } else {
     // i lose
-    win.innerText = "lose";
+    switch (settings.language) {
+      case "english":
+        win.innerText = "You Loose"
+        break;
+      case "german":
+        win.innerText = "Verloren";
+        break;
+      case "polish":
+        win.innerText = "Przegrałeś";
+        break;
+      case "hungarian":
+        win.innerText = "Vesztettél";
+        break;
+      case "french":
+        win.innerText = "Perdu";
+        break;
+      case "spanish":
+        win.innerText = "Perdió";
+        break;
+
+      default:
+        win.innerText = "You Loose";
+
+        break;
+    }
     auraPlayer.style.display = "none";
     auraComputer.style.display = "";
   }
@@ -243,7 +316,30 @@ function checkTheme(settings) {
 }
 
 function restoreDefault(settings) {
-  confirm("Are you sure?");
+  switch (settings.language) {
+    case "english":
+      confirm("Are you sure?");
+      break;
+    case "german":
+      confirm("Bist du sicher?");
+      break;
+    case "polish":
+      confirm("Jesteś pewny?");
+      break;
+    case "hungarian":
+      confirm("Biztos vagy ebben?");
+      break;
+    case "french":
+      confirm("Êtes-vous sûr?");
+      break;
+    case "spanish":
+      confirm("Estas seguro?");
+      break;
+
+    default:
+      confirm("Are you sure?");
+      break;
+  }
   settings.gameMode = "3";
   gameMode3.checked = true;
   settings.theme = "dark";
@@ -320,9 +416,10 @@ async function setTranslation(settings) {
     labels[2].innerText = english.dictionary.light;
     labels[3].innerText = english.dictionary.dark;
     defaultSettings.innerText = english.dictionary.restoreDefaults;
+    languageTxt.innerText = english.dictionary.language
     save.innerText = english.dictionary.save;
     pickedTxt.innerText = english.dictionary.picked
-    resultTxt.innerText = english.dictionary.you;
+
   } else if (settings.language == "german") {
     let german = data[1];
     title.innerText = german.dictionary.title;
@@ -338,9 +435,8 @@ async function setTranslation(settings) {
     labels[2].innerText = german.dictionary.light;
     labels[3].innerText = german.dictionary.dark;
     defaultSettings.innerText = german.dictionary.restoreDefaults;
+    languageTxt.innerText = german.dictionary.language
     save.innerText = german.dictionary.save;
-    resultTxt.innerText = german.dictionary.you;
-    win.innerText = german.dictionary.win;
 
 
   } else if (settings.language == "polish") {
@@ -358,6 +454,7 @@ async function setTranslation(settings) {
     labels[2].innerText = polish.dictionary.light;
     labels[3].innerText = polish.dictionary.dark;
     defaultSettings.innerText = polish.dictionary.restoreDefaults;
+    languageTxt.innerText = polish.dictionary.language
     save.innerText = polish.dictionary.save;
 
   } else if (settings.language == "hungarian") {
@@ -375,6 +472,7 @@ async function setTranslation(settings) {
     labels[2].innerText = hungarian.dictionary.light;
     labels[3].innerText = hungarian.dictionary.dark;
     defaultSettings.innerText = hungarian.dictionary.restoreDefaults;
+    languageTxt.innerText = hungarian.dictionary.language
     save.innerText = hungarian.dictionary.save;
 
   } else if (settings.language == "french") {
@@ -392,6 +490,8 @@ async function setTranslation(settings) {
     labels[2].innerText = french.dictionary.light;
     labels[3].innerText = french.dictionary.dark;
     defaultSettings.innerText = french.dictionary.restoreDefaults;
+    languageTxt.innerText = french.dictionary.language
+
     save.innerText = french.dictionary.save;
 
   } else if (settings.language == "spanish") {
@@ -408,6 +508,7 @@ async function setTranslation(settings) {
     themeTxt.innerText = spanish.dictionary.theme;
     labels[2].innerText = spanish.dictionary.light;
     labels[3].innerText = spanish.dictionary.dark;
+    defaultSettings.innerText = spanish.dictionary.restoreDefaults;
     defaultSettings.innerText = spanish.dictionary.restoreDefaults;
     save.innerText = spanish.dictionary.save;
 
