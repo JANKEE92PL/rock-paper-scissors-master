@@ -409,6 +409,7 @@ function restoreDefault(settings) {
   dark.checked = true;
   settings.isDefault = true;
   settings.resetScoreBtn = false;
+  resetScoreCheckbox.checked = false;
   setMode(settings);
   setTheme(settings);
   checkTheme(settings);
@@ -483,6 +484,9 @@ async function setTranslation(settings) {
     save.innerText = english.dictionary.save;
     pickedTxt.innerText = english.dictionary.picked
     pickedhouseTxt.innerText = english.dictionary.housePicked
+    resetScoreTxt.innerText = english.dictionary.resetScoreBtn
+    labels[4].innerText = english.dictionary.visible;
+
 
 
 
@@ -505,6 +509,8 @@ async function setTranslation(settings) {
     save.innerText = german.dictionary.save;
     pickedTxt.innerText = german.dictionary.picked;
     pickedhouseTxt.innerText = german.dictionary.housePicked
+    resetScoreTxt.innerText = german.dictionary.resetScoreBtn
+    labels[4].innerText = german.dictionary.visible;
 
 
   } else if (settings.language == "polish") {
@@ -526,6 +532,8 @@ async function setTranslation(settings) {
     save.innerText = polish.dictionary.save;
     pickedTxt.innerText = polish.dictionary.picked;
     pickedhouseTxt.innerText = polish.dictionary.housePicked
+    resetScoreTxt.innerText = polish.dictionary.resetScoreBtn
+    labels[4].innerText = polish.dictionary.visible;
 
 
   } else if (settings.language == "hungarian") {
@@ -547,6 +555,8 @@ async function setTranslation(settings) {
     save.innerText = hungarian.dictionary.save;
     pickedTxt.innerText = hungarian.dictionary.picked;
     pickedhouseTxt.innerText = hungarian.dictionary.housePicked
+    resetScoreTxt.innerText = hungarian.dictionary.resetScoreBtn
+    labels[4].innerText = hungarian.dictionary.visible;
 
 
   } else if (settings.language == "french") {
@@ -568,6 +578,8 @@ async function setTranslation(settings) {
     save.innerText = french.dictionary.save;
     pickedTxt.innerText = french.dictionary.picked;
     pickedhouseTxt.innerText = french.dictionary.housePicked
+    resetScoreTxt.innerText = french.dictionary.resetScoreBtn
+    labels[4].innerText = french.dictionary.visible;
 
 
   } else if (settings.language == "spanish") {
@@ -589,6 +601,8 @@ async function setTranslation(settings) {
     save.innerText = spanish.dictionary.save;
     pickedTxt.innerText = spanish.dictionary.picked;
     pickedhouseTxt.innerText = spanish.dictionary.housePicked
+    resetScoreTxt.innerText = spanish.dictionary.resetScoreBtn
+    labels[4].innerText = spanish.dictionary.visible;
 
 
   }
