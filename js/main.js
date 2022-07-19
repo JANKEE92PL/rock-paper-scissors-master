@@ -1,6 +1,7 @@
 //* IDEAS
 
-//? Score Reset Button
+//? Score Reset Button 
+//! in progress
 
 //? Save Settings Obj to Localstorage
 
@@ -23,7 +24,7 @@
 
 const buttons = document.querySelectorAll(".pick");
 const choice = ["paper", "rock", "scissors"];
-const scoreBtn = document.getElementById("score");
+const scoreVal = document.getElementById("score");
 const main = document.getElementById("main");
 const select = document.getElementById("select");
 const play = document.getElementById("play");
@@ -186,11 +187,41 @@ function winner() {
 
 //update score
 function myScore(value) {
-  score = score + value;
+  score += value;
   if (score >= 0) {
-    scoreBtn.innerText = score;
+    scoreVal.innerText = score;
+    if (score > 0) {
+      resetScoreBtn.classList.remove("d-none")
+    }
+    else if (score == 0) {
+      resetScoreBtn.classList.add("d-none")
+    }
   }
 }
+
+
+
+/**
+ * Reset Score using resetScoreBtn("click")
+ * 
+ */
+function resetScore() {
+  if (score > 0) {
+    confirm("Really reset Score?")
+    score = 0
+    scoreVal.innerText = "0";
+  }
+}
+
+
+
+resetScoreBtn.addEventListener("click", () => {
+  if (score > 0) {
+    resetScoreBtn.classList.add("d-none")
+    resetScore()
+  }
+  resetScore()
+})
 
 //play again
 play.addEventListener("click", function () {

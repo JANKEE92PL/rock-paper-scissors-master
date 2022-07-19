@@ -70,6 +70,19 @@ h1 {
   font-family: inherit;
 }
 
+.refresh {
+  transform: scale(0.75);
+  opacity: 50%;
+  position: absolute;
+  top: 70%;
+  left: 74%;
+  transition: opacity 250ms;
+}
+
+.refresh:hover {
+  opacity: 80%;
+}
+
 .rules {
   border: 3px solid hsl(217, 16%, 45%);
   border-radius: 10px;
