@@ -4,7 +4,8 @@
 //* DONE !!!
 
 //? Score Reset Button Toggle ON / OFF IN Settings Modal
-//! In progress!
+//* DONE !!!
+
 
 //? Create Additional Settings MODAL IN Settings Modal
 
