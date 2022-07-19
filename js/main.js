@@ -23,7 +23,7 @@
 
 const buttons = document.querySelectorAll(".pick");
 const choice = ["paper", "rock", "scissors"];
-const Score = document.getElementById("score");
+const scoreBtn = document.getElementById("score");
 const main = document.getElementById("main");
 const select = document.getElementById("select");
 const play = document.getElementById("play");
@@ -188,7 +188,7 @@ function winner() {
 function myScore(value) {
   score = score + value;
   if (score >= 0) {
-    Score.innerText = score;
+    scoreBtn.innerText = score;
   }
 }
 
