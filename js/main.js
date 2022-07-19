@@ -319,6 +319,7 @@ save.addEventListener("click", () => {
   setLanguage(settings);
   setTranslation(settings);
   setResetScoreBtn(settings);
+  activateHotkeys(settings);
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -609,17 +610,28 @@ function setResetScoreBtn(settings) {
  */
 
 // Hotkeys
-function activateHotkeys(settings) {
+/* function activateHotkeys(settings) {
+
   if (select.style.display == "flex") {
     document.body.addEventListener("keypress", (e) => {
-      select.display;
-      if (e.key === settings.hotkey) {
+      if (e.keyCode == settings.hotkey) {
         main.style.display = "flex";
         select.style.display = "none";
+        alert("huhu")
       }
     });
   }
-}
+} */
+
+document.body.addEventListener("keypress", (e) => {
+  if (select.style.display == "flex") {
+    console.log(e.keyCode);
+    console.log(settings.hotKey);
+    console.log(settings.hotKey === e.keyCode);
+    console.log(settings.hotKey == e.keyCode);
+    checkHotkeys(e,settings);
+  }
+});
 
 hotkeyChar.addEventListener("click", () => {
   this.addEventListener(
@@ -635,4 +647,13 @@ hotkeyChar.addEventListener("click", () => {
 
 function setHotkey(hotkeyCode) {
   settings.hotKey = hotkeyCode;
+  /* activateHotkeys(settings); */
+}
+
+function checkHotkeys(e, settings) {
+  if (e.keyCode == settings.hotkey) {
+    main.style.display = "flex";
+    select.style.display = "none";
+    alert("huhu");
+  }
 }
