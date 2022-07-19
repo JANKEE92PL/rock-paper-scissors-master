@@ -1,7 +1,12 @@
 //* IDEAS
 
 //? Score Reset Button 
-//! in progress
+//* DONE !!!
+
+//? Score Reset Button Toggle ON / OFF IN Settings Modal
+//! In progress!
+
+//? Create Additional Settings MODAL IN Settings Modal
 
 //? Save Settings Obj to Localstorage
 
@@ -12,6 +17,8 @@
 //? CLOSE GAME BUTTON
 
 //? RESTART BUTTON
+
+//? ADD HOTKEYS FOR PLAY AGAIN ( ENTER ) & CIRCLE 1 -3 / 1 -5 depens on which Game Mode
 
 //? COMBO SCREEN IF 3x in ROW WIN
 //? MULTIPLIKATOR IF 5x in ROW WIN
@@ -47,7 +54,7 @@ const settingsTxt = document.querySelector(".modal-settings-title");
 const labels = document.getElementsByTagName("label");
 const resultTxt = document.querySelector(".result");
 
-let settings = { gameMode: "3", theme: 'dark', language: 'english' };
+let settings = { gameMode: "3", theme: 'dark', language: 'english', resetScoreBtn: false };
 
 let score = 0;
 
@@ -190,10 +197,10 @@ function myScore(value) {
   score += value;
   if (score >= 0) {
     scoreVal.innerText = score;
-    if (score > 0) {
+    if (score > 0 && settings.resetScoreBtn) {
       resetScoreBtn.classList.remove("d-none")
     }
-    else if (score == 0) {
+    else if (score == 0 && !settings.resetScoreBtn) {
       resetScoreBtn.classList.add("d-none")
     }
   }
@@ -215,13 +222,15 @@ function resetScore() {
 
 
 
-resetScoreBtn.addEventListener("click", () => {
+resetScoreBtn.addEventListener("click", (settings) => {
   if (score > 0) {
-    resetScoreBtn.classList.add("d-none")
+    resetScoreBtn.classList.add("d-none") // BUTTON NOT VISIBLE
     resetScore()
   }
   resetScore()
 })
+
+
 
 //play again
 play.addEventListener("click", function () {
@@ -312,6 +321,7 @@ save.addEventListener("click", () => {
   modalSettings.style.display = "none";
   setLanguage(settings);
   setTranslation(settings);
+  setResetScoreBtn(settings)
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -398,6 +408,7 @@ function restoreDefault(settings) {
   settings.theme = "dark";
   dark.checked = true;
   settings.isDefault = true;
+  settings.resetScoreBtn = false;
   setMode(settings);
   setTheme(settings);
   checkTheme(settings);
@@ -409,7 +420,8 @@ function restoreDefault(settings) {
 function isDefault(settings) {
   if (
     settings.gameMode == 3 &&
-    settings.theme == "dark"
+    settings.theme == "dark" &&
+    settings.resetScoreBtn == false
   ) {
     return true;
   } else return false;
@@ -581,4 +593,13 @@ async function setTranslation(settings) {
 
   }
   return data;
+}
+
+function setResetScoreBtn(settings) {
+  if (resetScoreCheckbox.checked) {
+    resetScoreBtn.classList.remove("d-none")
+    return settings.resetScoreBtn = true
+  }
+  resetScoreBtn.classList.add("d-none")
+  return settings.resetScoreBtn = false
 }
