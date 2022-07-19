@@ -441,6 +441,18 @@ h2 {
   padding: 0;
 }
 
+.hotkey {
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+.hotkey::first-line{
+  color: blue;
+  font-weight: bold;
+  font-style: oblique;
+}
+
 @media (max-width: 800px) {
   .down {
     order: 1;

@@ -1,23 +1,21 @@
 //* IDEAS
 
-//? Score Reset Button 
+//? Score Reset Button
 //* DONE !!!
 
 //? Score Reset Button Toggle ON / OFF IN Settings Modal
 //* DONE !!!
 
-
 //? Create Additional Settings MODAL IN Settings Modal
 
 //? Save Settings Obj to Localstorage
+//! in progress
 
 //? TRIGGER Eacht 10 Score Steps Fireworks / Shower
 
 //? HIGHSCORE BOARD WITH USER FORM => Congrats new Highscore // please Enter your name => HighscoreArray.push(user)
 
 //? CLOSE GAME BUTTON
-
-//? RESTART BUTTON
 
 //? ADD HOTKEYS FOR PLAY AGAIN ( ENTER ) & CIRCLE 1 -3 / 1 -5 depens on which Game Mode
 
@@ -55,7 +53,12 @@ const settingsTxt = document.querySelector(".modal-settings-title");
 const labels = document.getElementsByTagName("label");
 const resultTxt = document.querySelector(".result");
 
-let settings = { gameMode: "3", theme: 'dark', language: 'english', resetScoreBtn: false };
+let settings = {
+  gameMode: "3",
+  theme: "dark",
+  language: "english",
+  resetScoreBtn: false,
+};
 
 let score = 0;
 
@@ -93,7 +96,7 @@ function winner() {
     //draw
     switch (settings.language) {
       case "english":
-        win.innerText = "You Draw"
+        win.innerText = "You Draw";
         break;
       case "german":
         win.innerText = "Remis";
@@ -135,7 +138,7 @@ function winner() {
     myScore(1);
     switch (settings.language) {
       case "english":
-        win.innerText = "You Win"
+        win.innerText = "You Win";
         break;
       case "german":
         win.innerText = "Gewonnen";
@@ -165,7 +168,7 @@ function winner() {
     // i lose
     switch (settings.language) {
       case "english":
-        win.innerText = "You Loose"
+        win.innerText = "You Loose";
         break;
       case "german":
         win.innerText = "Verloren";
@@ -199,39 +202,32 @@ function myScore(value) {
   if (score >= 0) {
     scoreVal.innerText = score;
     if (score > 0 && settings.resetScoreBtn) {
-      resetScoreBtn.classList.remove("d-none")
-    }
-    else if (score == 0 && !settings.resetScoreBtn) {
-      resetScoreBtn.classList.add("d-none")
+      resetScoreBtn.classList.remove("d-none");
+    } else if (score == 0 && !settings.resetScoreBtn) {
+      resetScoreBtn.classList.add("d-none");
     }
   }
 }
 
-
-
 /**
  * Reset Score using resetScoreBtn("click")
- * 
+ *
  */
 function resetScore() {
   if (score > 0) {
-    confirm("Really reset Score?")
-    score = 0
+    confirm("Really reset Score?");
+    score = 0;
     scoreVal.innerText = "0";
   }
 }
 
-
-
 resetScoreBtn.addEventListener("click", (settings) => {
   if (score > 0) {
-    resetScoreBtn.classList.add("d-none") // BUTTON NOT VISIBLE
-    resetScore()
+    resetScoreBtn.classList.add("d-none"); // BUTTON NOT VISIBLE
+    resetScore();
   }
-  resetScore()
-})
-
-
+  resetScore();
+});
 
 //play again
 play.addEventListener("click", function () {
@@ -322,7 +318,7 @@ save.addEventListener("click", () => {
   modalSettings.style.display = "none";
   setLanguage(settings);
   setTranslation(settings);
-  setResetScoreBtn(settings)
+  setResetScoreBtn(settings);
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -481,16 +477,12 @@ async function setTranslation(settings) {
     labels[2].innerText = english.dictionary.light;
     labels[3].innerText = english.dictionary.dark;
     defaultSettings.innerText = english.dictionary.restoreDefaults;
-    languageTxt.innerText = english.dictionary.language
+    languageTxt.innerText = english.dictionary.language;
     save.innerText = english.dictionary.save;
-    pickedTxt.innerText = english.dictionary.picked
-    pickedhouseTxt.innerText = english.dictionary.housePicked
-    resetScoreTxt.innerText = english.dictionary.resetScoreBtn
+    pickedTxt.innerText = english.dictionary.picked;
+    pickedhouseTxt.innerText = english.dictionary.housePicked;
+    resetScoreTxt.innerText = english.dictionary.resetScoreBtn;
     labels[4].innerText = english.dictionary.visible;
-
-
-
-
   } else if (settings.language == "german") {
     let german = data[1];
     title.innerText = german.dictionary.title;
@@ -509,11 +501,9 @@ async function setTranslation(settings) {
     languageTxt.innerText = german.dictionary.language;
     save.innerText = german.dictionary.save;
     pickedTxt.innerText = german.dictionary.picked;
-    pickedhouseTxt.innerText = german.dictionary.housePicked
-    resetScoreTxt.innerText = german.dictionary.resetScoreBtn
+    pickedhouseTxt.innerText = german.dictionary.housePicked;
+    resetScoreTxt.innerText = german.dictionary.resetScoreBtn;
     labels[4].innerText = german.dictionary.visible;
-
-
   } else if (settings.language == "polish") {
     let polish = data[2];
     title.innerText = polish.dictionary.title;
@@ -529,14 +519,12 @@ async function setTranslation(settings) {
     labels[2].innerText = polish.dictionary.light;
     labels[3].innerText = polish.dictionary.dark;
     defaultSettings.innerText = polish.dictionary.restoreDefaults;
-    languageTxt.innerText = polish.dictionary.language
+    languageTxt.innerText = polish.dictionary.language;
     save.innerText = polish.dictionary.save;
     pickedTxt.innerText = polish.dictionary.picked;
-    pickedhouseTxt.innerText = polish.dictionary.housePicked
-    resetScoreTxt.innerText = polish.dictionary.resetScoreBtn
+    pickedhouseTxt.innerText = polish.dictionary.housePicked;
+    resetScoreTxt.innerText = polish.dictionary.resetScoreBtn;
     labels[4].innerText = polish.dictionary.visible;
-
-
   } else if (settings.language == "hungarian") {
     let hungarian = data[3];
     title.innerText = hungarian.dictionary.title;
@@ -552,14 +540,12 @@ async function setTranslation(settings) {
     labels[2].innerText = hungarian.dictionary.light;
     labels[3].innerText = hungarian.dictionary.dark;
     defaultSettings.innerText = hungarian.dictionary.restoreDefaults;
-    languageTxt.innerText = hungarian.dictionary.language
+    languageTxt.innerText = hungarian.dictionary.language;
     save.innerText = hungarian.dictionary.save;
     pickedTxt.innerText = hungarian.dictionary.picked;
-    pickedhouseTxt.innerText = hungarian.dictionary.housePicked
-    resetScoreTxt.innerText = hungarian.dictionary.resetScoreBtn
+    pickedhouseTxt.innerText = hungarian.dictionary.housePicked;
+    resetScoreTxt.innerText = hungarian.dictionary.resetScoreBtn;
     labels[4].innerText = hungarian.dictionary.visible;
-
-
   } else if (settings.language == "french") {
     let french = data[4];
     title.innerText = french.dictionary.title;
@@ -575,14 +561,12 @@ async function setTranslation(settings) {
     labels[2].innerText = french.dictionary.light;
     labels[3].innerText = french.dictionary.dark;
     defaultSettings.innerText = french.dictionary.restoreDefaults;
-    languageTxt.innerText = french.dictionary.language
+    languageTxt.innerText = french.dictionary.language;
     save.innerText = french.dictionary.save;
     pickedTxt.innerText = french.dictionary.picked;
-    pickedhouseTxt.innerText = french.dictionary.housePicked
-    resetScoreTxt.innerText = french.dictionary.resetScoreBtn
+    pickedhouseTxt.innerText = french.dictionary.housePicked;
+    resetScoreTxt.innerText = french.dictionary.resetScoreBtn;
     labels[4].innerText = french.dictionary.visible;
-
-
   } else if (settings.language == "spanish") {
     let spanish = data[5];
     title.innerText = spanish.dictionary.title;
@@ -601,20 +585,54 @@ async function setTranslation(settings) {
     defaultSettings.innerText = spanish.dictionary.restoreDefaults;
     save.innerText = spanish.dictionary.save;
     pickedTxt.innerText = spanish.dictionary.picked;
-    pickedhouseTxt.innerText = spanish.dictionary.housePicked
-    resetScoreTxt.innerText = spanish.dictionary.resetScoreBtn
+    pickedhouseTxt.innerText = spanish.dictionary.housePicked;
+    resetScoreTxt.innerText = spanish.dictionary.resetScoreBtn;
     labels[4].innerText = spanish.dictionary.visible;
-
-
   }
   return data;
 }
 
 function setResetScoreBtn(settings) {
   if (resetScoreCheckbox.checked) {
-    resetScoreBtn.classList.remove("d-none")
-    return settings.resetScoreBtn = true
+    resetScoreBtn.classList.remove("d-none");
+    return (settings.resetScoreBtn = true);
   }
-  resetScoreBtn.classList.add("d-none")
-  return settings.resetScoreBtn = false
+  resetScoreBtn.classList.add("d-none");
+  return (settings.resetScoreBtn = false);
+}
+// LOCALSTORAGE
+/* settings.forEach((key,value) =>{
+  console.log("key ->" + key);
+  console.log("value ->" + value)
+  localStorage.setItem(key.toString(),value.toString())
+})
+ */
+
+// Hotkeys
+function activateHotkeys(settings) {
+  if (select.style.display == "flex") {
+    document.body.addEventListener("keypress", (e) => {
+      select.display;
+      if (e.key === settings.hotkey) {
+        main.style.display = "flex";
+        select.style.display = "none";
+      }
+    });
+  }
+}
+
+hotkeyChar.addEventListener("click", () => {
+  this.addEventListener(
+    "keydown",
+    (e) => {
+      let keyChar = e.keyCode;
+      hotkeyChar.value = e.key;
+      setHotkey(keyChar);
+    },
+    { once: true }
+  );
+});
+
+function setHotkey(hotkeyCode) {
+  settings.hotKey = hotkeyCode;
 }
