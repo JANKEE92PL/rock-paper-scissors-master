@@ -21,7 +21,9 @@
       "housePicked": "The house picked",
       "you": "You",
       "win": "win",
-      "playAgain": "play again"
+      "playAgain": "play again",
+      "resetScoreBtn": "Reset Score Button",
+      "visible": "Visible"
     }
   },
   {
@@ -46,7 +48,10 @@
       "housePicked": "Auswahl Gegner",
       "you": "Du",
       "win": "Gewonnen",
-      "playAgain": "Nochmal spielen"
+      "playAgain": "Nochmal spielen",
+      "resetScoreBtn": "Punktestand zurücksetzen",
+      "visible": "Anzeigen"
+
     }
   },
   {
@@ -71,7 +76,9 @@
       "housePicked": "Wybór przeciwnika",
       "you": "Ty",
       "win": "Wygrał",
-      "playAgain": "Zagraj ponownie"
+      "playAgain": "Zagraj ponownie",
+      "resetScoreBtn": "Zresetuj Wynik",
+      "visible": "Aktywne"
     }
   },
   {
@@ -96,7 +103,9 @@
       "housePicked": "Az ellenfél választása",
       "you": "Ön",
       "win": "Megnyerte",
-      "playAgain": "Játszd újra"
+      "playAgain": "Játszd újra",
+      "resetScoreBtn": "nullázza a pontszámot",
+      "visible": "aktív"
     }
   },
   {
@@ -121,7 +130,9 @@
       "housePicked": "adversaire de sélection",
       "you": "Tu",
       "win": "a gagné",
-      "playAgain": "Rejouer"
+      "playAgain": "Rejouer",
+      "resetScoreBtn": "Réinitialiser le score",
+      "visible": "Actif"
     }
   },
   {
@@ -146,7 +157,9 @@
       "housePicked": "Oponente de selección",
       "you": "Tú",
       "win": "Ganó",
-      "playAgain": "Juega de nuevo"
+      "playAgain": "Juega de nuevo",
+      "resetScoreBtn": "Restablecer puntuación",
+      "visible": "Indicar"
     }
   }
 ]
