@@ -319,7 +319,7 @@ save.addEventListener("click", () => {
   setLanguage(settings);
   setTranslation(settings);
   setResetScoreBtn(settings);
-  activateHotkeys(settings);
+  setHotkey()
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -625,35 +625,29 @@ function setResetScoreBtn(settings) {
 
 document.body.addEventListener("keypress", (e) => {
   if (select.style.display == "flex") {
-    console.log(e.keyCode);
-    console.log(settings.hotKey);
-    console.log(settings.hotKey === e.keyCode);
-    console.log(settings.hotKey == e.keyCode);
-    checkHotkeys(e,settings);
+    checkHotkeys(e, settings);
   }
 });
 
+let keyChar
 hotkeyChar.addEventListener("click", () => {
   this.addEventListener(
     "keydown",
     (e) => {
-      let keyChar = e.keyCode;
+      keyChar = e.keyCode;
       hotkeyChar.value = e.key;
-      setHotkey(keyChar);
     },
     { once: true }
   );
 });
 
-function setHotkey(hotkeyCode) {
-  settings.hotKey = hotkeyCode;
-  /* activateHotkeys(settings); */
+function setHotkey() {
+  settings.hotKey = keyChar;
 }
 
 function checkHotkeys(e, settings) {
-  if (e.keyCode == settings.hotkey) {
+  if (e.keyCode === settings.hotKey) {
     main.style.display = "flex";
     select.style.display = "none";
-    alert("huhu");
   }
 }
