@@ -609,19 +609,6 @@ function setResetScoreBtn(settings) {
 })
  */
 
-// Hotkeys
-/* function activateHotkeys(settings) {
-
-  if (select.style.display == "flex") {
-    document.body.addEventListener("keypress", (e) => {
-      if (e.keyCode == settings.hotkey) {
-        main.style.display = "flex";
-        select.style.display = "none";
-        alert("huhu")
-      }
-    });
-  }
-} */
 
 document.body.addEventListener("keypress", (e) => {
   if (select.style.display == "flex") {
@@ -630,12 +617,12 @@ document.body.addEventListener("keypress", (e) => {
 });
 
 let keyChar
-hotkeyChar.addEventListener("click", () => {
+hotkeyCharPlayAgain.addEventListener("click", () => {
   this.addEventListener(
     "keydown",
     (e) => {
       keyChar = e.keyCode;
-      hotkeyChar.value = e.key;
+      hotkeyCharPlayAgain.value = e.key; // displaying pressed Key in Text for UI
     },
     { once: true }
   );
