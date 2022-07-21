@@ -622,24 +622,12 @@ document.body.addEventListener("keypress", (e) => {
 
 
 let keyChar1
+let keyChar2
+let keyChar3
+let keyChar4
+let keyChar5
 let keyCharPlayAgain
 
-
-hotkeyCharPlayAgain.addEventListener("click", () => {
-  this.addEventListener(
-    "keydown",
-    (e) => {
-      keyCharPlayAgain = e.keyCode;
-      hotkeyCharPlayAgain.value = e.key; // displaying pressed Key in Text for UI
-    },
-    { once: true }
-  );
-});
-
-function setHotkeyPlayAgain() {
-  settings.hotKeyPlayAgain = keyCharPlayAgain;
-  settings.hotkeyChar1 = keyChar1;
-}
 
 function checkHotkeys(e, settings) {
   if (e.keyCode === settings.hotKeyPlayAgain) {
@@ -659,6 +647,24 @@ function checkHotkeys(e, settings) {
     },1000)
   }
 }
+
+
+hotkeyCharPlayAgain.addEventListener("click", () => {
+  this.addEventListener(
+    "keydown",
+    (e) => {
+      keyCharPlayAgain = e.keyCode;
+      hotkeyCharPlayAgain.value = e.key; // displaying pressed Key in Text for UI
+    },
+    { once: true }
+  );
+  });
+
+function setHotkeyPlayAgain() {
+  settings.hotKeyPlayAgain = keyCharPlayAgain;
+  settings.hotkeyChar1 = keyChar1;
+}
+
 
 hotkeyChar1.addEventListener("click", () => {
   this.addEventListener(
