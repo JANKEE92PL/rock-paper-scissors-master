@@ -319,7 +319,8 @@ save.addEventListener("click", () => {
   setLanguage(settings);
   setTranslation(settings);
   setResetScoreBtn(settings);
-  setHotkey()
+  setHotkeyPlayAgain()
+  setHotkey1()
 });
 
 defaultSettings.addEventListener("click", () => {
@@ -614,27 +615,62 @@ document.body.addEventListener("keypress", (e) => {
   if (select.style.display == "flex") {
     checkHotkeys(e, settings);
   }
+  else if (select.style.display == "" || select.style.display == "none") {
+    checkHotkeys(e, settings);
+  }
 });
 
-let keyChar
+
+let keyChar1
+let keyCharPlayAgain
+
+
 hotkeyCharPlayAgain.addEventListener("click", () => {
   this.addEventListener(
     "keydown",
     (e) => {
-      keyChar = e.keyCode;
+      keyCharPlayAgain = e.keyCode;
       hotkeyCharPlayAgain.value = e.key; // displaying pressed Key in Text for UI
     },
     { once: true }
   );
 });
 
-function setHotkey() {
-  settings.hotKey = keyChar;
+function setHotkeyPlayAgain() {
+  settings.hotKeyPlayAgain = keyCharPlayAgain;
+  settings.hotkeyChar1 = keyChar1;
 }
 
 function checkHotkeys(e, settings) {
-  if (e.keyCode === settings.hotKey) {
+  if (e.keyCode === settings.hotKeyPlayAgain) {
     main.style.display = "flex";
     select.style.display = "none";
   }
+  else if (e.keyCode === settings.hotkeyChar1) {
+    myChoice = "paper";
+    main.style.display = "none";
+    select.style.display = "flex";
+    winner();
+    win.classList.add();
+    setTimeout(() => {
+
+      main.style.display = "flex";
+      select.style.display = "none";
+    },1000)
+  }
+}
+
+hotkeyChar1.addEventListener("click", () => {
+  this.addEventListener(
+    "keydown",
+    (e) => {
+      keyChar1 = e.keyCode;
+      hotkeyChar1.value = e.key; // displaying pressed Key in Text for UI
+    },
+    { once: true }
+  );
+});
+
+function setHotkey1() {
+  settings.hotkeyChar1 = keyChar1;
 }
