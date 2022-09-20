@@ -1,4 +1,4 @@
-# Frontend Mentor - Rock, Paper, Scissors
+# Frontend Mentor - Rock, Paper, Scissors on Steroids 😉
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
